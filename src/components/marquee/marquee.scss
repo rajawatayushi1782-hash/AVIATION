@@ -1,0 +1,21 @@
+@import "styles/partials.scss";
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+.marquee__row {
+  display: flex;
+  white-space: nowrap;
+}
+
+.marquee__el {
+  
+}

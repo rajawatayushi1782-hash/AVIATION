@@ -1,0 +1,27 @@
+@use "sass:math";
+
+$fluid-typo-min-vw: 320px !default;
+$fluid-typo-max-vw: 1200px !default;
+
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
+
+@mixin fluid-typo($min-font-size, $max-font-size, $min-vw: $fluid-typo-min-vw , $max-vw: $fluid-typo-max-vw) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}

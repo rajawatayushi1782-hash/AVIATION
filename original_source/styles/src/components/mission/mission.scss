@@ -1,0 +1,69 @@
+@import "styles/partials.scss";
+
+.mission {
+  @include mq($until: desktop) {
+    opacity: 1 !important;
+  }
+  @include mq($from: tablet) {
+    padding: $padding-side--tablet 0 124px;
+  }
+  @include mq($from: desktop) {
+    min-height: 100vh;
+    padding-bottom: 40vh;
+  }
+  background-color: $c-eggshell;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: $padding-side*3 0 $padding-side*3;
+  will-change: opacity;
+  &.is-out {
+    opacity: 0;
+    line-height: 1.8;
+  }
+}
+
+.mission__wrapper {
+  @include mq($until: desktop) {
+    transform: initial !important;
+    opacity: 1 !important;
+  }
+}
+
+.mission__inner {
+  padding: 48px 0s;
+  height: 100vh;
+  will-change: transform, opacity;
+  .custom-scroll-disabled & {
+    transition: 0.2s linear all;
+  }
+}
+
+.mission__overline {
+  margin-bottom: 1em;
+}
+
+.mission__copy {
+  @include mq($until: desktop) {
+    opacity: 1 !important;
+  }
+  @include fluid-typo($font-size-veritas-copy, $font-size-veritas-copy--max);
+  color: $c-red;
+  font-family: $font-family-headline;
+  line-height: $line-height-veritas-copy;
+  p {
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+.mission-image {
+  &:before {
+    content: '';
+  }
+  flex: 0 0 40%;
+  img {
+    height: 100%;
+    max-width: 100%;
+  }
+}

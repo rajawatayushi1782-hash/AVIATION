@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  font-family: "neuzeit-grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent pull-to-refresh / rubber-banding on the root only. It must NOT
+   be set on body: body computes to a scroll container (overflow-x hidden)
+   and overscroll-behavior: none there blocks scroll chaining to the
+   document, which breaks upward touch scrolling on Android Chrome and
+   Samsung Internet. */
+html {
+  overscroll-behavior-y: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@font-face {
+  font-family: "simplon-mono";
+  src: url("./static/fonts/SimplonMono-Regular-WebS.woff2") format("woff2"), url("./static/fonts/SimplonMono-Regular-WebS.woff") format("woff");
+}
+
+@import url("//hello.myfonts.net/count/3eb4b1");
+  
+@font-face {
+  font-family: "Vanitas-Regular";
+  src: url('./static/fonts/vanitas.woff2') format('woff2'), url('./static/fonts/vanitas.woff') format('woff');
+}
+
+@font-face {
+  font-family: "neuzeit-grotesk";
+  src: url('./static/fonts/neuzeit.woff2') format('woff2'), url('./static/fonts/neuzeit.woff') format('woff');
+}

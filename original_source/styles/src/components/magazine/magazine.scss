@@ -1,0 +1,145 @@
+@import "styles/partials.scss";
+
+.magazine {
+  @include mq($from: desktop) {
+    padding-bottom: 50vh;
+  }
+  min-height: 100vh;
+  text-align: center;
+  pointer-events: none;
+  position: relative;
+  &.is-visible {
+    pointer-events: initial;
+  }
+}
+
+.magazine__fixie {
+  @include mq($from: desktop) {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0, var(--scroll, 0), 0);
+    will-change: transform;
+  }
+  width: 100%;
+}
+
+.magazine__inner {
+  @include mq($from: desktop) {
+    height: 100%;
+    padding: $padding-side--desktop 0 $padding-side--desktop;
+  }
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: $padding-side * 2 0 $padding-side * 4;
+}
+
+.magazine__image {
+  @include mq($from: desktop) {
+    clip-path: inset(
+      calc(100% - 100% * var(--mask-top)) 0 calc(100% * var(--mask-btm, 0)) 0
+    );
+    padding: 0;
+    will-change: clip-path;
+  }
+  flex: 1 1 auto;
+  position: relative;
+  padding-left: $padding-side;
+  padding-right: $padding-side;
+  .responsive-image {
+    @include mq($from: desktop) {
+      height: 100%;
+      position: absolute;
+      width: auto;
+    }
+    box-sizing: border-box;
+    height: auto;
+    left: 0;
+    margin: auto;
+    top: 0;
+    right: 0;
+    width: 100%;
+    img,
+    source {
+      @include mq($from: desktop) {
+        height: 100%;
+        position: absolute;
+        transform: translate3d(0, calc(25% * (1 - var(--mask-top))), 0);
+        will-change: transform;
+      }
+      box-sizing: border-box;
+      height: auto;
+      left: 0;
+      margin: auto;
+      right: 0;
+      object-fit: contain;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+.magazine__headline {
+  @include mq($from: desktop) {
+    transform: translateY(30vh);
+  }
+  @include wrapper();
+  opacity: 0;
+  transition: all 0.3s $easeInSine;
+  // transform: translateY(calc(75vh - 75vh * var(--mask-top)));
+
+  .is-visible & {
+    opacity: 1;
+    transition-timing-function: $easeOutCirc;
+    transition-duration: 0.6s;
+    transform: translateY(0);
+    will-change: transform;
+  }
+  .is-out & {
+    @include mq($from: desktop) {
+      opacity: 0;
+      // transform: translateY(-100%);
+    }
+    transition-timing-function: $easeOutSine;
+  }
+  h2 {
+    @include mq($from: tablet) {
+      margin-bottom: $padding-side--tablet;
+    }
+    @include mq($from: desktop) {
+      margin-bottom: $padding-side--desktop;
+    }
+    margin-bottom: $padding-side;
+  }
+}
+
+.magazine__copy {
+  @include mq($from: tablet) {
+    margin-top: $padding-side--tablet;
+  }
+  @include mq($from: tablet) {
+    margin-top: $padding-side--desktop;
+  }
+  opacity: 0;
+  transition: opacity 0.6s $easeInOutCirc;
+  will-change: opacity;
+  max-width: 960px;
+  margin-top: $padding-side;
+  p {
+    margin-top: 0;
+  }
+  .is-visible & {
+    opacity: 1;
+  }
+  .is-out & {
+    @include mq($from: desktop) {
+      opacity: 0;
+    }
+  }
+  .button-solid {
+    @include mq($from: desktop) {
+      margin-top: 4px;
+    }
+  }
+}

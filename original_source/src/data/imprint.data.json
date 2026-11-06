@@ -1,0 +1,36 @@
+{
+  "title": "Imprint",
+  "blocks": [
+    {
+      "paragraphs": [
+        "Information obligation under § 5 TMG.",
+        "Platoon Aviation GmbH & Co. KG<br />Rathausmarkt 5<br />20095 Hamburg<br />Germany",
+        "Tel.: +49 40 285 330-247<br />E-Mail: hello@flyplatoon.com<br />Internet: www.flyplatoon.com",
+        "Register and register number:<br />Amtsgericht Hamburg HRA 126952",
+        "UID-Number: 48/646/01206",
+        "Competent supervisory authority:<br />Luftfahrt-Bundesamt<br />Hermann-Blenk-Straße 26<br />38108 Braunschweig",
+        "General partner: <br />Platoon Aviation Verwaltungs GmbH <br />Rathausmarkt 5<br />20095 Hamburg <br />Deutschland",
+        "CEO: Deniz Weißenborn",
+        "Register and register number (general partner): Amtsgericht Hamburg HRB 167579"
+      ]
+    },
+    {
+      "headline": "Online Dispute Resolution website of the EU Commission",
+      "paragraphs": [
+        "In order for consumer and traders to resolve a dispute out-of-court, the European Commission developed the Online Dispute Resolution which can be found under the following link: <br /><a href=\"https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage\" target=\"_blank\" rel=\"noreferrer\">https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home.chooseLanguage</a><br />We are neither legally obliged, nor are we willing to take part in these proceedings."
+      ]
+    },
+    {
+      "headline": "Legal information and disclaimer",
+      "paragraphs": [
+        "The contents of these pages were prepared with the utmost care. Nonetheless we cannot guarantee that information and/or data provided under this website has changed. Accordingly, we cannot take any legal liability for the timeless accuracy and completeness of the information and/or data, unless legal liability is indispensable. This also applies for third-party-websites available via hyperlink. We are not responsible for the content of third-party websites. This also applies for entries submitted by third-parties under these websites."
+      ]
+    },
+    {
+      "headline": "Copyright notice",
+      "paragraphs": [
+        "All contents of this website (including images, photos, texts, videos) are subject to Copyright of the Federal Republic of Germany (Urheberrechtsgesetz). Any unlawful use of this content (including distribution, reproduction, and republishing) requires our prior consent. We reserve all rights including the right to legally prosecute any infringement of our copyright. If you find any content on this website that violates copyright law and/or intellectual property law, please contact us. <br />We reserve the right to change and/or update this website without preannouncement."
+      ]
+    }
+  ]
+}

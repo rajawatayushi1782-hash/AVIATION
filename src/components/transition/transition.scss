@@ -1,0 +1,71 @@
+@import "styles/partials.scss";
+
+@keyframes openClose {
+  // 0% { transform: scaleY(0); transform-origin: top center; }
+  // 50% { transform: scaleY(1); transform-origin: bottom center; }
+  // 100% { transform: scaleY(0); }
+}
+
+.transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--win-height, 100vh);
+  width: 100%;
+  pointer-events: none;
+  z-index: $z-transition;
+  &.is-open {
+    transform: scaleY(-1);
+  }
+}
+
+.transition__layer {
+  background: $c-ruby;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transition: transform 0.6s $easeInOutQuad;
+  transform-origin: bottom left;
+  transform: scaleY(0);
+  .is-open & {
+    transform: scaleY(1);
+    transition-timing-function: $easeInOutQuad;
+    transition-delay: 0s;
+  }
+}
+
+// .transition__layer {
+//   height: 100%;
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   width: 100%;
+//   transition-property: none;
+//   .is-transition & {
+//     transform: scaleY(-1);
+//   }
+//   div {
+//     background: rgba($c-ruby, 0.8);
+//     transition: $easeInOutQuad;
+//     transition-duration: inherit;
+//     transition-delay: 0.4s;
+   
+//     transform: scaleY(0);
+//     height: 100%;
+//     transform-origin: bottom left;
+//     width: 100%;
+//     .is-transition & {
+//       transform: scaleY(1);
+//       transition-timing-function: $easeInOutQuad;
+//       transition-delay: 0s;
+//     } 
+//   }
+//   // &.is-two {
+//   //   div {
+//   //     background: rgba($c-ruby, 0.5);
+//   //   }
+//   // }
+// }
+

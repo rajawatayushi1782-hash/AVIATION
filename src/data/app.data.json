@@ -1,0 +1,145 @@
+{
+  "pages": [
+    {
+      "route": "Home",
+      "title": "Your home in the sky",
+      "menuTitle": "Home",
+      "menuImg": "https://content.flyplatoon.com/website/menu-home.jpg",
+      "header": {
+        "title": "Your Home in the Sky",
+        "media": "",
+        "video": "https://content.flyplatoon.com/website/platoon-intro-big.mp4",
+        "videoMobile": "https://content.flyplatoon.com/website/platoon-intro-mobile.mp4",
+        "videoMobileFallback": "https://content.flyplatoon.com/website/header-home-fallback.jpg",
+        "key": "home",
+        "index": 10
+      },
+      "nextRoute": "Jets"
+    },
+    {
+      "route": "Jets",
+      "title": "The Jets",
+      "menuTitle": "The Jets",
+      "menuImg": "https://content.flyplatoon.com/website/menu-jets.jpg",
+      "header": {
+        "title": "The Jets",
+        "media": "",
+        "imageSet": {
+          "desktop": "https://content.flyplatoon.com/website/header-jets.jpg",
+          "mobile": "https://content.flyplatoon.com/website/header-jets-mobile.jpg"
+        },
+        "key": "jets",
+        "index": 8
+      },
+      "nextRoute": "Experience"
+    },
+    {
+      "route": "Experience",
+      "title": "Experience",
+      "menuTitle": "The Experience",
+      "menuImg": "https://content.flyplatoon.com/website/menu-experience.jpg",
+      "header": {
+        "title": "Experience",
+        "media": "",
+        "imageSet": {
+          "desktop": "https://content.flyplatoon.com/website/header-experience.jpg",
+          "mobile": "https://content.flyplatoon.com/website/header-experience-mobile.jpg"
+        },
+        "key": "experience",
+        "index": 6
+      },
+      "nextRoute": "Career"
+    },
+    {
+      "route": "Career",
+      "title": "Career",
+      "menuTitle": "Career",
+      "menuImg": "https://content.flyplatoon.com/website/career_menu-title.jpg",
+      "header": {
+        "title": "Career",
+        "media": "",
+        "imageSet": {
+          "desktop": "https://content.flyplatoon.com/website/career_menu.jpg",
+          "mobile": "https://content.flyplatoon.com/website/career_menu-mobile.jpg"
+        },
+        "key": "career",
+        "index": 5
+      },
+      "nextRoute": "Sponsoring"
+    },
+    {
+      "route": "Sponsoring",
+      "title": "Sponsoring",
+      "menuTitle": "Sponsoring",
+      "menuImg": "https://content.flyplatoon.com/website/sps_ptn_8.jpg",
+      "header": {
+        "title": "Sponsoring",
+        "media": "",
+        "video": "https://content.flyplatoon.com/website/sps_Platoon_4K.mp4",
+        "videoMobile": "https://content.flyplatoon.com/website/sps_Platoon_4K-mobile.mp4",
+        "videoMobileFallback": "https://content.flyplatoon.com/website/sps_mobile_Platoon_4K-mobile.jpg",
+        "key": "sponsoring",
+        "index": 7,
+        "loop": true
+      },
+      "nextRoute": "Story"
+    },
+    {
+      "route": "Story",
+      "title": "Our Story",
+      "menuTitle": "Our Story",
+      "menuImg": "https://content.flyplatoon.com/website/menu-story.jpg",
+      "header": {
+        "title": "Our Story",
+        "media": "",
+        "video": "https://content.flyplatoon.com/website/platoon-clouds.mp4",
+        "videoMobile": "https://content.flyplatoon.com/website/platoon-clouds-mobile.mp4",
+        "key": "story",
+        "index": 4,
+        "loop": true
+      }
+    },
+    {
+      "route": "Imprint",
+      "title": "Imprint",
+      "menuTitle": "Imprint",
+      "menuImg": "https://content.flyplatoon.com/website/menu-home.jpg",
+      "header": {
+        "title": "Imprint",
+        "media": "",
+        "imageSet": {
+          "desktop": "https://content.flyplatoon.com/website/header-jets.jpg",
+          "mobile": "https://content.flyplatoon.com/website/header-jets-mobile.jpg"
+        },
+        "key": "imprint",
+        "index": 3
+      }
+    },
+    {
+      "route": "PrivacyPolicy",
+      "title": "Privacy Policy",
+      "menuTitle": "Privacy Policy",
+      "menuImg": "https://content.flyplatoon.com/website/menu-home.jpg",
+      "header": {
+        "title": "Privacy Policy",
+        "media": "",
+        "imageSet": {
+          "desktop": "https://content.flyplatoon.com/website/header-jets.jpg",
+          "mobile": "https://content.flyplatoon.com/website/header-jets-mobile.jpg"
+        },
+        "key": "privacy-policy",
+        "index": 2
+      }
+    }
+  ],
+  "meta": {
+    "phone": "+49 40 285 330-247",
+    "email": "hello@flyplatoon.com"
+  },
+  "cookies": {
+    "paragraph": [
+      "This website uses cookies.",
+      "By using this website and its content you accept these cookies."
+    ]
+  }
+}

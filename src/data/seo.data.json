@@ -1,0 +1,47 @@
+{
+  "/": {
+    "title": "Platoon Aviation - Your Home in the Sky",
+    "description": "The next generation airline offering private jet solutions to the world's most exclusive airports.",
+    "name": "Home"
+  },
+  "/jets": {
+    "title": "The Jets - Platoon Aviation",
+    "description": "A uniform fleet of Pilatus PC-24 jets: quilted Italian leather, hardwood cabinetry and a spacious cabin — with access to difficult-to-reach airports.",
+    "name": "The Jets",
+    "ogImage": "https://content.flyplatoon.com/website/header-jets.jpg"
+  },
+  "/experience": {
+    "title": "The Experience - Platoon Aviation",
+    "description": "Private aviation refined: personal service, seamless travel and your home in the sky with Platoon Aviation.",
+    "name": "The Experience",
+    "ogImage": "https://content.flyplatoon.com/website/header-experience.jpg"
+  },
+  "/our-story": {
+    "title": "Our Story - Platoon Aviation",
+    "description": "Platoon Aviation was formed with the mission to refine what it means to fly private — created by ardent aviators with a new approach to charter travel.",
+    "name": "Our Story",
+    "ogImage": "https://content.flyplatoon.com/website/menu-story.jpg"
+  },
+  "/sponsoring": {
+    "title": "Sponsoring - Platoon Aviation",
+    "description": "Platoon Aviation proudly sponsors the Platoon Sailing Team — three-time TP52 World Champion and winner of the 52 SUPER SERIES 2023.",
+    "name": "Sponsoring",
+    "ogImage": "https://content.flyplatoon.com/website/sps_ptn_8.jpg"
+  },
+  "/career": {
+    "title": "Career - Platoon Aviation",
+    "description": "Join the Platoon Aviation team — career opportunities in private aviation with competitive benefits and room to grow.",
+    "name": "Career",
+    "ogImage": "https://content.flyplatoon.com/website/career_menu.jpg"
+  },
+  "/imprint": {
+    "title": "Imprint - Platoon Aviation",
+    "description": "Legal disclosure and company information for Platoon Aviation GmbH & Co. KG, Hamburg.",
+    "name": "Imprint"
+  },
+  "/privacy-policy": {
+    "title": "Privacy Policy - Platoon Aviation",
+    "description": "How Platoon Aviation collects, uses and protects your personal data.",
+    "name": "Privacy Policy"
+  }
+}

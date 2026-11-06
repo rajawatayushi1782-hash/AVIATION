@@ -1,0 +1,63 @@
+@import "styles/partials";
+
+.topbar {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: $z-topbar;
+  &.is-out {
+    z-index: $z-topbar-out;
+  }
+  &.is-menu-open {
+    opacity: 1 !important;
+    z-index: $z-topbar;
+  }
+  &.is-legal {
+    position: absolute;
+  }
+}
+
+.topbar__inner {
+  @include mq($from: tablet) {
+    height: $topbar-height--tablet;
+  }
+  @include mq($from: desktop) {
+    height: $topbar-height--desktop;
+  }
+  align-items: center;
+  display: flex;
+  height: $topbar-height;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.topbar__logo {
+  @include mq($from: tablet) {
+    height: 42px;
+  }
+  @include mq($from: desktop) {
+    height: 64px;
+    transform: translateY(15px);
+  }
+  height: 44px;
+  pointer-events: initial;
+  width: auto;
+  transform: translateY(10%);
+  img {
+    height: 100%;
+    width: auto;
+  }
+  .is-out & {
+    pointer-events: none;
+  }
+  .is-menu-open & {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}

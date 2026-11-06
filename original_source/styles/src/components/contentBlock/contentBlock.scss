@@ -1,0 +1,159 @@
+@import "styles/partials.scss";
+
+.content-block {
+  @include mq($from: desktop) {
+    min-height: 100vh;
+  }
+  width: auto;
+  &.is-fixed {
+    @include mq($from: desktop) {
+      height: $text-image-height--desktop;
+      width: 100%;
+    }
+  }
+}
+
+.content-block__container {
+  @include mq($from: tablet) {
+    padding: $padding-side--tablet;
+  }
+  @include mq($from: desktop) {
+    left: 0;
+    padding: $padding-side--desktop;
+    padding-top: 0;
+    position: absolute;
+    width: 40%;
+    .is-reverse & {
+      left: initial;
+      right: 0;
+    }
+    .is-spaced & {
+      justify-content: space-between;
+      height: 100%;
+    }
+    .is-fixed & {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      transform: translate3d(0, var(--scroll, 0), 0);
+    }
+  }
+  @include mq($from: wide) {
+    padding: $padding-side--desktop*1.5;
+    padding-top: 0;
+  }
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: $padding-side $padding-side 48px;
+  width: 100%;
+  .is-inverted & {
+    color: $c-eggshell;
+  }
+  .is-dark-overline & {
+    h6 {
+      color: rgba($c-ruby, 0.7);
+    }
+  }
+}
+
+.content-block__inner {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  max-width: 100%;
+  width: 470px;
+  opacity: 0;
+  transition: opacity 0.3s $easeInSine;
+  will-change: opacity;
+  .is-spaced & {
+    justify-content: space-between;
+  }
+  .is-visible & {
+    opacity: 1;
+    transition: opacity 0.6s $easeOutQuad;
+  }
+}
+
+// TOP BLOCK
+.content-block-top {
+  // background: red;
+  @include mq($from: desktop) {
+    mask-image: url("/static/images/fog-mask-bottom.png");
+    mask-size: 100% auto;
+    mask-position: bottom left;
+    flex: 0 1 $content-block-top;
+    .is-static & {
+      mask-image: initial;
+    }
+  }
+  align-items: flex-end;
+  display: flex;
+  position: relative;
+}
+
+.content-block-top__container {
+  @include mq($from: desktop) {
+    transform: translate3d(0, 80px, 0);
+  }
+  display: block;
+  transition: transform 0.4s $easeInCubic;
+  will-change: transform;
+  .is-visible & {
+    transform: translate3d(0, 0, 0);
+    transition: transform 1s $easeOutCubic;
+  }
+}
+
+.content-block-top__plx {
+  @include mq($from: desktop) {
+    // transform: translate3d(0, calc(0.5em - 15vh * var(--progress, 0)), 0);
+    will-change: transform;
+    .custom-scroll-disabled & {
+      // transition: 0.2s linear transform;
+    }
+    .is-static & {
+      transform: initial;
+    }
+  }
+}
+
+// BOTTOM BLOCK
+.content-block-bottom {
+  @include mq($from: desktop) {
+    opacity: 0;
+    transform: translate3d(0, 40px, 0);
+    transition: all 0 $easeOutCubic 1s;
+    will-change: transform, opacity;
+    .is-visible & {
+      opacity: 1;
+      transition-duration: 0.6s;
+      transition-delay: 0.3s;
+      transform: translate3d(0,0,0);
+    }
+    // mask-image: url("/static/images/fog-mask-middle-reverse.png");
+    // mask-size: 100% auto;
+    // mask-position: left 100%;
+    // transition: mask-position 1s $easeOutQuad 1s;
+    // .is-visible & {
+    //   mask-position: left 0%;
+    //   transition: mask-position 2s $easeOutQuad;
+    // }
+    // mask-position: left calc(100% - 100% * var(--mask-bottom));
+  }
+  position: relative;
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.content-block__button {
+  @include mq($from: tablet) {
+    margin-top: $padding-side--tablet;
+  }
+  @include mq($from: desktop) {
+    margin-top: $padding-side--desktop;
+  }
+  display: block;
+  margin-top: $padding-side;
+}

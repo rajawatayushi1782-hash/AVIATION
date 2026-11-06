@@ -1,0 +1,19 @@
+@mixin grid-row() {
+  @include mq($from: tablet) {
+    margin-left: -$padding-side--tablet*0.5;
+    margin-right: -$padding-side--tablet*0.5;
+  }
+  display: flex;
+  margin-left: -$padding-side*0.5;
+  margin-right: -$padding-side*0.5;
+}
+
+@mixin grid-cell() {
+  @include mq($from: tablet) {
+    padding-left: $padding-side--tablet*0.5;
+    padding-right: $padding-side--tablet*0.5;
+  }
+  box-sizing: border-box;
+  padding-left: $padding-side*0.5;
+  padding-right: $padding-side*0.5;
+}

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": false,
+    "baseUrl": "./src",
+    "paths": {
+      "components/*": ["components/*"],
+      "constants/*": ["constants/*"],
+      "containers/*": ["containers/*"],
+      "data/*": ["data/*"],
+      "shell/*": ["shell/*"],
+      "static/*": ["static/*"],
+      "styles/*": ["styles/*"]
+    }
+  },
+  "include": ["src", "vite.config.ts"]
+}

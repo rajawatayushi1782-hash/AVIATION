@@ -1,0 +1,11 @@
+@import "styles/partials.scss";
+
+.jets {
+  padding-top: var(--win-height, 100vh);
+  padding-bottom: var(--win-height, 100vh);
+}
+
+.jets__inner {
+  background-color: $c-eggshell;
+  clip-path: inset(0 0 0 0);
+}

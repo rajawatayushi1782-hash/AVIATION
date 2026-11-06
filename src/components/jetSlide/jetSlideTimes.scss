@@ -1,0 +1,98 @@
+@import "styles/partials.scss";
+
+.jet-slide-times {
+  align-items: center;
+  background-color: $c-eggshell;
+  clip-path: inset(0 0 0 0);
+  display: flex;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid $c-eggshell-dark;
+  pointer-events: none;
+}
+
+.jet-slide-times__inner {
+  @include mq($from: desktop) {
+    position: fixed;
+    transform: translate3d(0, var(--scroll, 0), 0);
+  }
+  top: 0;
+  
+  will-change: transform;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+}
+
+.jet-slide-times__times-wrapper {
+  @include mq($from: desktop) {
+    flex-direction: row;
+    height: 100%;
+  }
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 80%;
+  width: 100%;
+}
+
+.jet-slide-times__combo {
+  text-align: center;
+  position: relative
+  
+}
+
+.jet-slide-times__airport {
+  @include fluid-typo(14px, 18px);
+}
+
+.jet-slide-times__times {
+  position: relative;
+  i {
+    font-style: normal;
+  }
+}
+
+.jet-slide-times__time {
+  @include fluid-typo($font-size-jet-times, $font-size-jet-times--max);
+  font-family: $font-family-mono;
+  font-style: normal;
+  color: $c-red;
+  margin: 0.3em 0;
+}
+
+.jet-slide-times__marquee {
+  @include mq($from: desktop) {
+    bottom: 25%;
+  }
+  font-family: $font-family-mono;
+  bottom: 5%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-transform: uppercase;
+  .marquee__el {
+    color: $c-eggshell-dark;
+    padding-right: 4em;
+    position: relative;
+    &:after {
+      background: $c-eggshell-dark;
+      content: '';
+      height: 0.5em;
+      position: absolute;
+      right: 2em;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 0.5em;
+      transform: translateX(50%);
+    }
+  }
+  &.is-top {
+    bottom: initial;
+    top: 20%;
+  }
+}

@@ -1,0 +1,49 @@
+@import "styles/partials.scss";
+
+$c-story-bg: #427aa1;
+
+.story-copy {
+  @include mq($from: desktop) {
+    margin-top: -25vh;
+  }
+  @include fluid-typo($font-size-veritas-copy, $font-size-veritas-copy--max);
+  color: $c-eggshell;
+  font-family: $font-family-headline;
+  line-height: $line-height-veritas-copy;
+  text-align: center;
+  margin-top: -35vh;
+  margin-bottom: 20vh;
+  p {
+    text-shadow: 0 0em 0.2em rgba($c-story-bg, 0.2);
+  }
+}
+
+.story-copy__fixie {
+  mask-image: url('/static/images/fog-fullscreen.png');
+  
+  // mask-position: 0 calc(var(--offset-y, 0) * -1 + 10vh);
+  mask-size: 100% 90vh;
+  mask-repeat: no-repeat;
+  will-change: mask-position;
+  min-height: 100vh;
+  width: 100%;
+  // stylelint-disable-line function-disallowed-list
+  mask-position: 0 calc((-1 * var(--offset-y, 0px)) + 10vh);
+}
+
+.story-copy__wrapper {
+  @include wrapper();
+  max-width: 960px;
+}
+
+.story-copy__movel {
+  @include mq($from: desktop) {
+    transform: translate3d(0, 25vh, 0);
+  }
+  transform: translate3d(0, 35vh, 0);
+  transition: transform 2s $easeOutCubic;
+  will-change: transform;
+  .is-init & {
+    transform: translate3d(0, 0, 0);
+  }
+}

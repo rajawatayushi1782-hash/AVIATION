@@ -1,0 +1,18 @@
+@import "styles/partials.scss";
+
+.flip-board {
+
+}
+
+// ITEM
+.flip-board-item {
+  font-family: $font-family-mono;
+  font-style: normal;
+  text-transform: uppercase;
+  display: inline-flex;
+  justify-content: center;
+  width: 0.8em;
+  &.is-small {
+    width: 0.3em;
+  }
+}

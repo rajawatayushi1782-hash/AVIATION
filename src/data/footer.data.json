@@ -1,0 +1,72 @@
+{
+  "chapters": [
+    {
+      "image": "https://content.flyplatoon.com/website/footer-home-new.jpg",
+      "label": "Home",
+      "route": "Home"
+    },
+    {
+      "image": "https://content.flyplatoon.com/website/footer-jets-new.jpg",
+      "label": "The Jets",
+      "route": "Jets"
+    },
+    {
+      "image": "https://content.flyplatoon.com/website/home-quote-new.jpg",
+      "label": "The Experience",
+      "route": "Experience"
+    },
+    {
+      "image": "https://content.flyplatoon.com/website/career_menu-mobile.jpg",
+      "label": "Career",
+      "route": "Career"
+    },
+    {
+      "image": "https://content.flyplatoon.com/website/sps_ptn_8.jpg",
+      "label": "Sponsoring",
+      "route": "Sponsoring"
+    },
+    {
+      "image": "https://content.flyplatoon.com/website/menu-story.jpg",
+      "label": "Our Story",
+      "route": "Story"
+    }
+  ],
+  "contact": [
+    {
+      "label": "+49 40 285 330-247",
+      "link": "tel:+49 40 285 330 247"
+    },
+    {
+      "label": "hello@flyplatoon.com",
+      "link": "mailto:hello@flyplatoon.com"
+    }
+  ],
+  "copyright": [
+    {
+      "label": "©%year% Platoon Aviation"
+    },
+    {
+      "label": "From Hamburg with love"
+    }
+  ],
+  "social": [
+    {
+      "label": "LinkedIn",
+      "link": "https://www.linkedin.com/company/platoon-aviation"
+    },
+    {
+      "label": "Instagram",
+      "link": "https://www.instagram.com/flyplatoon/"
+    }
+  ],
+  "legal": [
+    {
+      "label": "Imprint",
+      "route": "Imprint"
+    },
+    {
+      "label": "Privacy Policy",
+      "route": "PrivacyPolicy"
+    }
+  ]
+}

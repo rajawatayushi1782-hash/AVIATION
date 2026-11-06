@@ -1,0 +1,15 @@
+@import "styles/partials.scss";
+
+$z-scroll: 10 !default;
+
+.scroll {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  z-index: $z-scroll;
+}
+
+.scroll__scrollable {
+  width: 100%;
+  will-change: transform;
+}

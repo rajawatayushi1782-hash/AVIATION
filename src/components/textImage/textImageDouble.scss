@@ -1,0 +1,98 @@
+@import "styles/partials.scss";
+
+.text-image-double {
+  height: calc(100vh + 4px);
+  right: 0;
+  top: -2px;
+  z-index: 2;
+  position: fixed;
+  transform: translate3d(0, var(--scroll, 0), 0);
+  width: 60%;
+  will-change: transform;
+  img {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.text-image-double__movel {
+  height: 100%;
+  transition: 1s $easeInOutCubic transform;
+  will-change: transform;
+  width: 100%;
+  .is-half & {
+    transform: translate3d(-$content-block-width--desktop, 0, 0);
+  }
+}
+
+.text-image-double__main {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 100%;
+  transition: 1s $easeOutCubic all;
+  transform: translate3d(44%, 100%, 0);
+  will-change: transform;
+  .is-in & {
+    clip-path: inset(0 0 0 0);
+    height: 100%;
+    transform: translate3d(44%, 0, 0);
+  }
+  .is-half & {
+    transition-timing-function: $easeInOutQuad;
+    transition-delay: 0s;
+    width: 100%;
+    transform: translate3d(0, 0, 0);
+  }
+  img {
+    transition: 1s linear opacity, 1s $easeOutCubic transform;
+    will-change: opacity, transform;
+    &:first-child {
+      transform: translate3d(0, -50%, 0);
+      .is-in & {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+
+    &:last-child {
+      opacity: 0;
+      .is-half & {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.text-image-double__second {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 68%;
+  overflow: hidden;
+  width: 44%;
+  transition: 0.68s $easeOutQuad all 0s;
+  transform: translate3d(0, 100%, 0);
+  will-change: transform;
+  .is-in & {
+    transition-delay: 0.5s;
+    clip-path: inset(0 0 0 0);
+    transition-timing-function: $easeOutCubic;
+    transform: translate3d(0, 0, 0);
+  }
+  .is-half & {
+    transition-delay: 0;
+  }
+  img {
+    transition: inherit;
+    transform: translate3d(0, -30%, 0);
+    .is-in & {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}

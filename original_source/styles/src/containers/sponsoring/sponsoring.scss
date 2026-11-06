@@ -1,0 +1,33 @@
+@import "styles/partials.scss";
+
+.sponsoring {
+  padding-top: var(--win-height, 100vh);
+  padding-bottom: var(--win-height, 100vh);
+}
+
+.sponsoring__inner {
+  background-color: $c-eggshell;
+  clip-path: inset(0 0 0 0);
+}
+
+@media (max-width: 768px) {
+  .sponsoring {
+    .quote__image-container.is-quote-first img,.quote__image-container.is-quote-second img {
+      max-width: 85%;
+    }
+    #jets-lugguage > div > div > div.image-plx {
+      &:before {
+        display: none;
+      }
+      img {
+        display: none;
+      }
+    }
+    #jets {
+      .image-plx__inner img{
+        max-width: 100%;
+        margin-left: auto;
+      }
+    }
+  }
+}

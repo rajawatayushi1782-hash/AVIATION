@@ -1,0 +1,59 @@
+@import "styles/partials.scss";
+
+$t-asset-in: 1s;
+$t-asset-out: 0.3s;
+
+// ****************
+// ASSET
+.text-image-asset {
+  height: calc(100vh);
+  top: 0;
+  z-index: 2;
+  right: 0;
+  position: fixed;
+  transform: translate3d(0, var(--scroll, 0), 0);
+  will-change: transform, width;
+  width: 60%;
+  overflow: hidden;
+  &.is-fixed-top {
+    transform: translateY(-2px);
+    position: relative;
+  }
+  &.is-reverse {
+    left: 0;
+    right: initial;
+  }
+}
+
+.text-image-asset__movel {
+  height: 100%;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: transform $t-asset-out $easeInCubic;
+  will-change: transform;
+  width: 100%;
+  .is-reverse & {
+    transform: translateX(-100%);
+  }
+  .is-in & {
+    transform: translateX(0);
+    transition: transform $t-asset-in $easeOutCubic;
+  }
+}
+
+.text-image-asset__img {
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  object-position: 50% 50%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: scale(1.3);
+  transition: transform $t-asset-out $easeInCubic;
+  will-change: transform;
+  .is-in & {
+    transition: transform $t-asset-in $easeInOutQuad;
+    transform: scale(1);
+  }
+}

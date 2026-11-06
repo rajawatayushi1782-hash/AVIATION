@@ -1,0 +1,35 @@
+// @use "scss:map";
+
+// padding
+$padding-side: 16px;
+$padding-side--tablet: 24px;
+$padding-side--desktop: 32px;
+// topbar
+$topbar-height: 72px;
+$topbar-height--tablet: 122px;
+$topbar-height--desktop: 122px;
+// wrapper
+$wrapper-max-width: 1400px; // change fluid typo if change max width
+// viewport
+$vp-mobile: 320px;
+$vp-desktop: 980px;
+// fluid typo
+$fluid-typo-min-vw: map-get($mq-breakpoints, "mobile") !default;
+$fluid-typo-max-vw: 1352px !default;
+$fluid-value-min-vw: map-get($mq-breakpoints, "mobile") !default;
+$fluid-value-max-vw: 1352px !default;
+
+
+/* ---- MODULES ----- */
+
+// text image
+$text-image-asset-width: 60vw;
+// content block
+$content-block-width--desktop: 40vw;
+$content-block-top: 40vh;
+//
+$text-image-height--desktop: 100vh;
+$text-image-move-out-y: transform 0.7s $easeOutCubic;
+$text-image-move-out-y-out: transform 0.7s $easeInQuad;
+//
+$transition-fox-height: 30vh;

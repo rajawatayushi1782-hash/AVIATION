@@ -1,0 +1,156 @@
+@import "styles/partials.scss";
+
+html, body {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+// Native scrolling (touch devices): the document is the one and only
+// scroll container. html keeps overflow-x: hidden as horizontal-overflow
+// protection; body must stay overflow: visible so touch scrolls target
+// the document directly instead of latching on body.
+html.is-scroll-default {
+  height: initial;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.is-scroll-default body {
+  height: initial;
+  overflow: initial;
+}
+
+body {
+  @include mq($from: desktop) {
+    font-size: $font-size--desktop;
+    font-weight: $font-weight-light;
+  }
+  color: $c-dark;
+  font-size: $font-size;
+  line-height: $line-height;
+  hyphens: none !important;
+}
+
+.app {
+  position: relative;
+  min-width: 320px;
+  height: 100vh;
+  width: 100%;
+  .is-scroll-default & {
+    height: initial;
+  }
+}
+
+.app-content {
+  padding-top: 100vh;
+  padding-bottom: 100vh;
+  > div {
+    background-color: $c-eggshell;
+    height: 100%;
+    position: relative;
+    pointer-events: initial;
+  }
+  &--story {
+    padding-bottom: 0;
+  }
+}
+
+.app__scroll {
+  pointer-events: none;
+  z-index: $z-app-scroll;
+}
+
+.app__container {
+  min-height: var(--win-height, 100vh);
+  position: relative;
+  overflow: hidden;
+}
+
+button {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  hyphens: none !important;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+} 
+
+h1 {
+  @include fluid-typo($font-size-h1, $font-size-h1--max);
+  line-height: $line-height-headline;
+  font-family: $font-family-headline;
+  font-weight: normal;
+  margin-bottom: 0.3em;
+  margin-top: 0.3em;
+}
+
+h2 {
+  @include fluid-typo($font-size-h2, $font-size-h2--max);
+  line-height: $line-height-headline;
+  font-family: $font-family-headline;
+  font-weight: normal;
+  margin: 0.3em 0;
+}
+
+h3 {
+  @include fluid-typo($font-size-h3, $font-size-h3--max);
+  line-height: $line-height-headline;
+  font-family: $font-family-headline;
+  font-weight: normal;
+  margin: 0.3em 0;
+}
+
+h4 {
+  @include mq($from: tablet) {
+    font-size: $font-size-h4--tablet;
+  }
+  font-family: $font-family-headline;
+  font-size: $font-size-h4;
+  line-height: $line-height-headline;
+  font-family: $font-family-headline;
+  font-weight: normal;
+  margin: 0.3em 0;
+}
+
+// overline
+h6 {
+  @include mq($from: tablet) {
+    font-size: $font-size-overline--tablet;
+  }
+  color: $c-grey;
+  font-weight: $font-weight-normal;
+  font-family: $font-family-mono;
+  font-size: $font-size-overline;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0.3em 0;
+  + h2 {
+    margin-top: 0.2em;
+  }
+}
+
+.wrapper {
+  @include wrapper();
+}
+
+.wrapper--no-max {
+  @include wrapper();
+  max-width: initial;
+}
+
+.wrapper--tight {
+  @include wrapper();
+  max-width: 960px;
+}
+
+.grid-row {
+  @include grid-row();
+}
+
+.grid-cell {
+  @include grid-cell();
+}

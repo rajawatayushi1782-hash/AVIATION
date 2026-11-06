@@ -1,0 +1,159 @@
+@import "styles/partials.scss";
+
+.text-image {
+  @include mq($from: desktop) {
+    min-height: 100vh;
+    flex-direction: row;
+    pointer-events: none;
+  }
+  background-color: $c-eggshell;
+  box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+
+  &.is-in {
+    pointer-events: initial;
+  }
+  &.is-out {
+    @include mq($from: desktop) {
+      pointer-events: none;
+    }
+  }
+  &.is-reverse {
+    @include mq($from: desktop) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.text-image__inner {
+  @include mq($from: desktop) {
+    height: 100%;
+    flex-direction: column;
+  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  top: 0;
+  width: 100%;
+}
+
+// custom out
+// .is-out & {
+//   transform: translateY(-100%);
+//   transition: transform 0.4s $easeInCubic;
+// }
+
+.text-image--home-jets,
+.text-image--jets,
+.text-image--experience {
+  @include mq($from: desktop) {
+    &.is-out {
+      .content-block-top__container {
+        transform: translateY(-40vh);
+        transition: transform 0.4s $easeInCubic;
+      }
+    }
+  }
+}
+
+// CUSTOM STUFF
+.text-image--noid,
+.text-image--home-jets,
+.text-image--experience,
+.text-image--jets {
+  @include mq($from: desktop) {
+    .content-block__inner {
+      transition: transform 0.7s $easeOutQuad, opacity 0.7s $easeInOutCubic;
+      will-change: transform, opacity;
+    }
+    .text-image-asset__movel {
+      will-change: transform, opacity;
+    }
+    &.is-out {
+      .content-block__inner {
+        opacity: 0;
+        transform: translate3d(0, -5vh, 0);
+        transition: transform 0.7s $easeInQuad, opacity 0.7s $easeInOutCubic;
+      }
+      .text-image-asset__movel {
+        transform: translate3d(0, -110vh, 0);
+        transition: transform 0.7s $easeInQuad;
+      }
+    }
+  }
+}
+
+.text-image--jets,
+.text-image--experience {
+  @include mq($from: desktop) {
+    &:after {
+      background: $c-eggshell-dark;
+      top: 0;
+      content: "";
+      height: 1px;
+      position: absolute;
+      width: 100%;
+    }
+    z-index: 0;
+    height: 140vh;
+
+    .content-block {
+      height: 140vh !important;
+    }
+
+    .content-block-top__plx {
+      transform: translateY(calc(5vh - 10vh * var(--progress, 0)));
+    }
+  }
+  &:not(.is-in) {
+    .text-image-asset__movel {
+      transform: translateX(0) !important;
+    }
+  }
+}
+
+.text-image--home-double,
+.text-image--jets-lugguage {
+  @include mq($from: desktop) {
+    position: relative;
+    &:after {
+      background: $c-eggshell-dark;
+      bottom: 0;
+      content: "";
+      height: 1px;
+      position: absolute;
+      width: 100%;
+    }
+
+    .content-block__container {
+      transition: opacity 0.3s $easeInOutSine;
+    }
+
+    &.is-out {
+      // z-index: 0;
+      .content-block__container {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.text-image--jets-lugguage {
+  @include mq($from: desktop) {
+    .text-image-asset {
+      transition: width 1s $easeInOutQuad;
+    }
+    &.is-out {
+      .text-image-asset__movel {
+        // transform: translate3d(-40vw,0,0);
+      }
+      .text-image-asset {
+        // height: calc(100vh / 60 * 100);
+        width: 100vw;
+      }
+    }
+  }
+}

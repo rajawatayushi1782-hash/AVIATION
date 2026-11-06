@@ -1,0 +1,74 @@
+@import "styles/partials.scss";
+
+.jet-slide-strip {
+  @include mq($from: desktop) {
+    flex-direction: row;
+    height: 100vh;
+  }
+  background: $c-ruby;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  z-index: 0;
+}
+
+.jet-slide-strip__graphic {
+  @include mq($from: tablet) {
+    padding: $padding-side--tablet;
+  }
+  @include mq($from: desktop) {
+    // clip-path: inset(var(--mask-top, 0) 0 var(--mask-btm, 0) 0);
+    padding: $padding-side--desktop;
+    height: 100vh;
+    width: 60%;
+    .is-visible & {
+      top: 0;
+      position: fixed;
+      transform: translateY(var(--scroll));
+    }
+    
+  }
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  padding: $padding-side;
+  width: 100%;
+  img {
+    max-width: 100%;
+    &:first-child {
+      margin-bottom: -17%;
+    }
+  }
+}
+
+.jet-slide-strip__number {
+  align-items: baseline;
+  box-sizing: border-box;
+  color: $c-eggshell;
+  font-family: $font-family-mono;
+  width: 100%;
+  line-height: 0;
+  position: relative;
+  display: flex;
+  svg {
+    height: auto;
+    width: 100%;
+  }
+}
+
+// .jet-slide-strip__number-container {
+//   color: $c-eggshell;
+//   font-family: $font-family-mono;
+//   flex: 1 0 auto;
+//   overflow: hidden
+// }
+
+.jet-slide-strip__number-label {
+  color: $c-eggshell;
+  font-family: $font-family-mono;
+  @include fluid-typo(14px, 18px);
+}

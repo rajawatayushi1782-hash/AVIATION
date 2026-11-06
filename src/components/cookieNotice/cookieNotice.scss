@@ -1,0 +1,111 @@
+@import "styles/partials";
+
+$cookie-notice-padding-side-desktop: 20px;
+
+.cookieNotice {
+  @include mq($from: desktop) {
+    max-width: 330px;
+  }
+  background-color: $c-eggshell;
+  border-left: 1px solid $c-dark;
+  border-top: 1px solid $c-dark;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  pointer-events: none;
+  opacity: 0;
+  width: 100%;
+  z-index: $z-cookie;
+  &.is-visible {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  span {
+    display: block;
+  }
+}
+
+.cookieNotice__inner {
+  @include mq($from: tablet) {
+    padding: $padding-side--tablet;
+  }
+  @include mq($from: desktop) {
+    // flex-direction: row;
+    padding: $cookie-notice-padding-side-desktop;
+  }
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-mono;
+  padding: $padding-side;
+  width: 100%;
+}
+
+.cookieNotice__inner-paragraph {
+  @include fluid-typo(14px, 14px);
+  @include mq($from: tablet) {
+    padding-bottom: $padding-side--tablet;
+  };
+  @include mq($from: desktop) {
+    text-align: left;
+    padding-bottom: $cookie-notice-padding-side-desktop;
+  };
+  padding-bottom: $padding-side;
+  // text-align: center;
+}
+
+.cookieNotice__inner-btn {
+  @include mq($from: desktop) {
+    margin-top: $padding-side--tablet;
+  }
+  @include mq($from: desktop) {
+    margin-top: 0;
+    margin-left: -$cookie-notice-padding-side-desktop*0.5;
+    margin-right: -$cookie-notice-padding-side-desktop*0.5;
+  }
+  align-items: center;
+  display: flex;
+  // margin-top: $padding-side;
+  // justify-content: center;
+}
+
+.cookieNotice__btn {
+  @include fluid-typo(14px, 16px);
+  @include mq($from: desktop) {
+    padding-left: $cookie-notice-padding-side-desktop*0.5;
+    padding-right: $cookie-notice-padding-side-desktop*0.5;
+  }
+  box-sizing: border-box;
+  line-height: 1;
+  flex: 1 1 50%;
+  white-space: nowrap;
+  .button-solid {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+// .cookieNotice__inner-btn-read {
+//   @include mq($from: desktop) {
+//     margin-top: 0;
+//     font-size: $font-size;
+//   }
+//   // @include fluid-typo(14px, 14px);
+//   font-family: $font-family;
+//   font-size: $font-size-overline--tablet;
+//   text-align: center;
+//   // a {
+//   //   width: 100px;
+//   // }
+// }
+
+// .cookieNotice__inner-btn-agree {
+//   @include mq($from: desktop) {
+//     margin-top: 0;
+//     font-size: $font-size;
+//   }
+//   @include fluid-typo(14px, 14px);
+//   font-family: $font-family;
+//   font-size: $font-size-overline--tablet;
+//   margin-left: 16px;
+// }

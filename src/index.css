@@ -1,0 +1,30 @@
+
+html, body {
+  margin: 0;
+  font-family: "neuzeit-grotesk", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  overscroll-behavior-y: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+@font-face {
+  font-family: "simplon-mono";
+  src: url("/static/media/SimplonMono-Regular-WebS.7974b82a.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Vanitas-Regular";
+  src: url("/static/media/vanitas.183b7edd.woff") format("woff");
+}
+
+@font-face {
+  font-family: "neuzeit-grotesk";
+  src: url("/static/media/neuzeit.7dd8c073.woff") format("woff");
+}

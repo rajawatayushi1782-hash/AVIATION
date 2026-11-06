@@ -1,0 +1,90 @@
+@import "styles/partials.scss";
+
+.jet-slide-lugguage {
+  background: $c-eggshell;
+  clip-path: inset(0 0 0 0);
+  // align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  .is-mobile-scroll & {
+    height: var(--win-height, 100vh);
+  }
+}
+
+.jet-slide-lugguage__items {
+  @include mq($from: desktop) {
+    flex-direction: row;
+    height: 60vh;
+    justify-content: space-between;
+    padding-top: 0;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0, var(--scroll, 0), 0);
+    will-change: transform;
+  }
+  align-items: center;
+  height: 60vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10vh;
+  max-width: 960px;
+  width: 100%;
+  //
+  position: absolute;
+  .is-absolute & {
+    transform: initial;
+    position: absolute;
+  }
+}
+
+// ITEM
+.jet-slide-lugguage-item {
+  font-family: $font-family-mono;
+  text-align: center;
+}
+
+.jet-slide-lugguage-item__number {
+  @include fluid-typo(72px, 122px);
+  letter-spacing: 0em;
+  line-height: 1;
+  position: relative;
+  span {
+    font-size: 14px;
+    font-family: $font-family-mono;
+  }
+}
+
+.jet-slide-lugguage-item__label {
+  @include fluid-typo(14px, 18px);
+}
+
+.jets-slide-lugguage__bags {
+  align-items: flex-end;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, var(--scroll, 0), 0);
+  will-change: opacity, transform;
+  img, object {
+    height: auto;
+    // transform: translateY(calc(-25% * var(--plx)));
+    max-width: 1280px;
+    width: 100%;
+  }
+  .is-absolute & {
+    transform: initial;
+    position: absolute;
+  }
+  // transform: translateY(calc(50% - 50% * var(--bags-opacity)));
+}

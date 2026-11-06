@@ -1,0 +1,126 @@
+@import "styles/partials.scss";
+
+.quote {
+  @include mq($from: desktop) {
+    min-height: 150vh;
+    padding-bottom: 0;
+  }
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 80vh;
+  padding-bottom: 36px;
+  pointer-events: none;
+  width: 100%;
+}
+
+.quote__images {
+  @include mq($from: desktop) {
+    align-items: center;
+    flex-direction: row;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0, var(--scroll, 0), 0);
+    will-change: transform;
+  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.quote__image-container {
+  display: flex;
+  flex: 1 0 auto;
+  &.is-quote-first {
+    @include mq($from: desktop) {
+      align-self: flex-start;
+      transform: translateY(calc(-100vh + 130vh * var(--progress, 0)));
+      will-change: transform;
+      padding-bottom: 0;
+    }
+    align-self: flex-end;
+    justify-content: flex-start;
+    padding-bottom: $padding-side*4;
+    transform: translateY(calc(-10% + 20% * var(--progress, 0)));
+  }
+  &.is-quote-second {
+    @include mq($from: desktop) {
+      transform: translateY(calc(100vh - 100vh * var(--progress, 0)));
+      will-change: transform;
+      padding-top: 0;
+    }
+    align-self: flex-start;
+    justify-content: flex-end;
+    padding-top: $padding-side*4;
+    // transform: translateY(calc(-10% + 20% * var(--progress, 0)));
+  }
+}
+
+.quote__image {
+  @include mq($from: desktop) {
+    max-width: 25vw;
+  }
+  align-self: center;
+  display: block;
+  height: auto;
+  max-width: 50vw;
+  width: 100%;
+  .is-quote-first & {
+    @include mq($from: desktop) {
+      transform: translateY(calc(200% * var(--progress, 0)));
+      will-change: transform;
+    }
+  }
+  .is-quote-second & {
+    @include mq($from: desktop) {
+      transform: translateY(calc(100% - 100% * var(--progress, 0)));
+      will-change: transform, opacity;
+    }
+  }
+}
+
+// THE BOCK QUOTE
+.quote__quote {
+  @include mq($from: tablet) {
+    padding-left: $padding-side--tablet;
+    padding-right: $padding-side--tablet;
+  }
+  @include mq($from: desktop) {
+    padding-left: $padding-side--desktop;
+    padding-right: $padding-side--desktop;
+    max-width: 100%;
+    width: 680px;
+  }
+  box-sizing: border-box;
+  padding-left: $padding-side;
+  padding-right: $padding-side;
+  text-align: center;
+  blockquote {
+    @include fluid-typo($font-size-veritas-copy, $font-size-veritas-copy--max);
+    color: $c-red;
+    font-family: $font-family-headline;
+    line-height: $line-height-veritas-copy;
+    margin: 0;
+  }
+  figcaption {
+    color: $c-eggshell-dark;
+    margin-top: 0.5em;
+  }
+}
+
+.quote__quote-movel {
+  @include mq($from: desktop) {
+    transform: translateY(calc(10vh - 20vh * var(--progress)));
+    mask-image: url("/static/images/fog-mask-copy.png");
+    mask-size: 150% auto;
+    mask-repeat: no-repeat;
+    mask-position: 0 calc(80% * var(--mask, 0));
+    will-change: mask-position, transform;
+  }
+  transform: translateY(calc(-2.5vh + 5vh * var(--progress)));
+  
+  // }
+}

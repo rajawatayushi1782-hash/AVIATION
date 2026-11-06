@@ -1,0 +1,41 @@
+@import "styles/partials.scss";
+
+.footer-legal-item {
+  @include mq($from: desktop) {
+    margin-bottom: 0;
+    text-align: left;
+  }
+  align-self: flex-start;
+  color: $c-eggshell;
+  display: block;
+  font-family: $font-family-mono;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  text-decoration: none;
+  span {
+    @include mq($from: desktop) {
+      font-size: $font-size;
+      margin-bottom: 0;
+    }
+  }
+  .menu__footer & {
+    display: block;
+    margin: auto;
+  }
+}
+
+a.footer-legal-item {
+  transition: color 0.3s $easeOutCubic;
+  &:hover {
+    color: $c-red;
+  }
+}
+
+.footer-legal-item-links {
+  font-family: $font-family-mono;
+  font-size: $font-size;
+  color: $c-eggshell;
+  line-height: 17px;
+  text-decoration: none;
+}

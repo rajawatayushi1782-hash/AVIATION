@@ -1,0 +1,42 @@
+@import "styles/partials.scss";
+
+.counting-number {
+  font-family: $font-family-mono;
+  text-align: center;
+  &.is-white {
+    color: $c-eggshell;
+  }
+}
+
+.counting-number__number {
+  @include fluid-typo(48px, 122px);
+  letter-spacing: 0em;
+  line-height: 1;
+  
+  span {
+    @include fluid-typo(10px, 16px);
+    &:first-child {
+      opacity: 0;
+    }
+  }
+  
+}
+
+.counting-number__number-el {
+  display: inline;
+  position: relative;
+  i {
+    font-style: normal;
+    letter-spacing: -0.05em;
+    &.is-dot {
+      display: inline-block;
+      transform: translateX(-0.15em);
+      width: 0.3em;
+    }
+  }
+}
+
+.counting-number__label {
+  font-family: $font-family-mono;
+  @include fluid-typo(14px, 18px);
+}

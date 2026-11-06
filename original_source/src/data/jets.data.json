@@ -1,0 +1,245 @@
+{
+  "loop": [
+    {
+      "type": "facts",
+      "data": {
+        "items": [
+          {
+            "title": [
+              "Consistency is key"
+            ],
+            "copy": "We operate a uniform fleet: what you book is what you get.",
+            "illu": "jets.svg"
+          },
+          {
+            "title": [
+              "Your home in the sky"
+            ],
+            "copy": "Quilted Italian leather, hardwood cabinetry, spacious cabin.",
+            "illu": "cabin.svg"
+          },
+          {
+            "title": [
+              "Easy access"
+            ],
+            "copy": "The PC-24 can land in those difficult to reach airports.",
+            "illu": "mountains.svg"
+          }
+        ]
+      }
+    },
+    {
+      "type": "textImage",
+      "data": {
+        "id": "jets",
+        "imageAsset": {
+          "image": "https://content.flyplatoon.com/website/jets-jets.jpg"
+        },
+        "imageMobile": [
+          "https://content.flyplatoon.com/website/jets-jets-mobile.jpg"
+        ],
+        "content": [
+          {
+            "overline": "STATE OF THE ART",
+            "headline": "Your personal Swiss Army knife – with wings",
+            "copy": [
+              "The latest jet from the fabled Pilatus stable, the state-of-the-art PC-24 has everything. Think precision engineering, striking looks, and a go-anywhere attitude. From the inside out, only the highest quality materials make the grade. Big enough for 8 passengers and small enough for the shortest runways, it’s the only aircraft you’ll ever need."
+            ]
+          }
+        ],
+        "reverse": true
+      }
+    },
+    {
+      "type": "gallery",
+      "data": {
+        "items": [
+          {
+            "image": "https://content.flyplatoon.com/website/jets-gallery-1.jpg",
+            "desktop": {
+              "y": -1,
+              "width": "26%",
+              "widthMobile": "40%"
+            }
+          },
+          {
+            "image": "https://content.flyplatoon.com/website/jets-gallery-2.jpg",
+            "desktop": {
+              "y": 1,
+              "width": "40%",
+              "widthMobile": "60%"
+            }
+          },
+          {
+            "image": "https://content.flyplatoon.com/website/jets-gallery-3.jpg",
+            "desktop": {
+              "y": -0.5,
+              "width": "34%",
+              "widthMobile": "70%"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "textImage",
+      "data": {
+        "id": "jets-lugguage",
+        "imageAsset": {
+          "image": "https://content.flyplatoon.com/website/jets-lugguage.jpg"
+        },
+        "imageMobile": [
+          "https://content.flyplatoon.com/website/jets-lugguage-mobile.jpg"
+        ],
+        "content": [
+          {
+            "overline": "Comfort & Size",
+            "headline": "Iconic design, practical performance",
+            "copy": [
+              "Say hello to the world’s first super versatile jet – a category the PC-24 had to invent all for itself. With the cabin size of a midsize jet, there’s space to eat and meet at 45,000ft. And its hallmark pallet-sized cargo door means you really can take the kitchen sink too. Trading capacity for comfort just became a thing of the past."
+            ]
+          }
+        ],
+        "fixedOut": true
+      }
+    }
+  ],
+  "slides": {
+    "lugguage": {
+      "items": [
+        {
+          "number": 10,
+          "label": "suitcases"
+        },
+        {
+          "number": 25,
+          "divider": 10,
+          "unit": "m³",
+          "label": "baggage capacity",
+          "debug": true
+        },
+        {
+          "number": 8,
+          "label": "individual seats"
+        }
+      ]
+    },
+    "strip": {
+      "content": {
+        "overline": "Accessibility",
+        "headline": "Unparalleled runway performance",
+        "copy": [
+          "From Andorra‘s La Seu d’Urgell to Switzerland’s Saanen, the PC-24 gets you places other jets simply cannot reach. Fly hassle-free and save time: with the ability to operate on runways as short as 893m, your world just got a lot closer."
+        ],
+        "inverted": true,
+        "reverse": true
+      }
+    },
+    "times": {
+      "airports": [
+        "Saanen",
+        "La Mole",
+        "London City",
+        "Siena",
+        "Albenga",
+        "Samedan",
+        "Lugano",
+        "Syros",
+        "Nice",
+        "Barcelona",
+        "Ibiza",
+        "Olbia",
+        "Naples",
+        "Paris",
+        "Siena",
+        "Farnborough",
+        "Munich",
+        "Pisa",
+        "Malaga",
+        "Lisbon",
+        "Geneva"
+      ],
+      "timeCombos": [
+        [
+          {
+            "airport": "Hamburg - Madrid",
+            "time": "02:50"
+          },
+          {
+            "airport": "Madrid - Nice",
+            "time": "01:45"
+          },
+          {
+            "airport": "Nice - Florence",
+            "time": "00:50"
+          }
+        ],
+        [
+          {
+            "airport": "Naples - Zurich",
+            "time": "01:40"
+          },
+          {
+            "airport": "Zurich - Berlin",
+            "time": "01:20"
+          },
+          {
+            "airport": "Berlin - Munich",
+            "time": "01:15"
+          }
+        ],
+        [
+          {
+            "airport": "London - Lisbon",
+            "time": "02:40"
+          },
+          {
+            "airport": "Lisbon - Ibiza",
+            "time": "01:40"
+          },
+          {
+            "airport": "Ibiza - Barcelona",
+            "time": "00:45"
+          }
+        ]
+      ]
+    },
+    "reach": {
+      "content": {
+        "overline": "The Reach",
+        "headline": "Reach your potential",
+        "copy": [
+          "With a maximum range of 3,700km, the PC-24 has Europe covered. You can go from the boardroom in London to the beach in Sicily, or business meeting in Oslo to concert hall in Vienna, in one single seamless experience."
+        ]
+      },
+      "stats": [
+        {
+          "number": 815,
+          "unit": "km/h",
+          "label": "speed"
+        },
+        {
+          "number": 3700,
+          "unit": "km",
+          "label": "distance"
+        }
+      ]
+    },
+    "experience": {
+      "content": {
+        "overline": "Our plane in 3d",
+        "headline": "Reach your potential",
+        "copy": [
+          "Scan the QR code and experience our PC24 in 3D."
+        ]
+      }
+    }
+  },
+  "closing": {
+    "id": "jets-closing",
+    "imageSet": {
+      "mobile": "https://content.flyplatoon.com/website/jets-closing-mobile.jpg",
+      "desktop": "https://content.flyplatoon.com/website/jets-closing.jpg"
+    }
+  }
+}

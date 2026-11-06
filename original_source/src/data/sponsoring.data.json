@@ -1,0 +1,57 @@
+{
+  "loop": [
+    {
+      "type": "textImage",
+      "data": {
+        "id": "jets",
+        "imageAsset": {
+          "image": "https://content.flyplatoon.com/website/sps_edited_ptn_8.jpg"
+        },
+        "imageMobile": [
+          "https://content.flyplatoon.com/website/sps_edited_ptn_8.jpg"
+        ],
+        "content": [
+          {
+            "overline": "PLATOON SAILING TEAM",
+            "headline": "Platoon as Sponsor since 2023",
+            "copy": [
+              "The Platoon Sailing Team is a three-time TP52 World Champion and won the 52 SUPER SERIES, the world’s leading grand prix monohull racing circuit, in 2023. The team is owned and run by Hamburg businessman Harm Müller-Spreer who is a lifelong racing sailor who previously enjoyed success in the highly competitive, prestigious Dragon keelboat class. He raced in the TP52 class on the original MedCup Circuit but after a long hiatus returned with a world class crew armed top boats from the Vrolijk design office. Platoon finished on the circuit podium almost every year but in 2023 finally landed the overall season title as well as the Rolex TP52 World Championship."
+            ]
+          }
+        ],
+        "reverse": true
+      }
+    },
+    {
+      "type": "quote",
+      "data": {
+        "quote": "Since 2024, Platoon Aviation has been the “naming sponsor” of the 52 SUPER SERIES team. The newly built boat shines in the design of the “Platoon Aviation” fleet.",
+        "author": "",
+        "imageLeft": "https://content.flyplatoon.com/website/sps_edited_ptn_3.jpg",
+        "imageRight": "https://content.flyplatoon.com/website/sps_edited_ptn_6.jpg"
+      }
+    },
+    {
+      "type": "textImage",
+      "data": {
+        "id": "jets-lugguage",
+        "imageAsset": {
+          "image": "https://content.flyplatoon.com/website/sps_edited_ptn_6.jpg"
+        },
+        "imageMobile": [
+          "https://content.flyplatoon.com/website/sps_edited_ptn_6-mobile.jpg"
+        ],
+        "content": [
+          {
+            "overline": "Platoon as sponsor for the",
+            "headline": "THE 52 SUPER SERIES TEAM",
+            "copy": [
+              "Since 2024, Platoon Aviation has been the “naming sponsor” of the 52 SUPER SERIES team. The newly built boat shines in the design of the “Platoon Aviation” fleet. The start of the 2024 season with a new boat was no easy. But the end of the season was worth its weight in gold: Harm Müller-Spreer and his crew on. Platoon Aviation won the Royal Cup off Valencia.The coup on the final day of the 52 Super Series 2024 season was nothing short of sensational. In the end, only one point made the difference between the overall winners of the 52 Super Series Quantum Racing and Platoon Aviation, who took second place. The TP52 class itself emerged around the turn of the millennium for the Transpac (TP) Race from Los Angeles to Hawaii, which is where the boats got their name. Today, the 52 Super Series is also referred to as the “Formula 1 of the non-foiling racing world."
+            ]
+          }
+        ],
+        "fixedOut": true
+      }
+    }
+  ]
+}

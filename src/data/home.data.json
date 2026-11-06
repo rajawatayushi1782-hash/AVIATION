@@ -1,0 +1,64 @@
+{
+  "mission": {
+    "overline": "Our Mission",
+    "copy": [
+      "Created by a core team of aviation-industry experts, PLATOON is the most sophisticated way to fly private. Our unrivalled connections, collective experience and class-leading hospitality elevate jet charter to a whole new level – where premium is paramount and style comes as standard.  Come join us in the stratosphere and become part of the next generation in aviation."
+    ],
+    "subline": "Fly private, fly PLATOON"
+  },
+  "loop": [
+    {
+      "type": "textImage",
+      "data": {
+        "id": "home-jets",
+        "imageAsset": {
+          "image": "https://content.flyplatoon.com/website/home-jets.jpg",
+          "objectPosition": "0% center"
+        },
+        "imageMobile": [
+          "https://content.flyplatoon.com/website/home-jets-mobile.jpg"
+        ],
+        "content": [
+          {
+            "overline": "The Jets",
+            "headline": "Welcome aboard the all-new Pilatus&nbsp;PC-24",
+            "copy": [
+              "Welcome to precision engineering combined with striking aesthetics. Designed to delight, the PC-24 is your personal Swiss Army knife – with wings. We can fly you into the most exclusive and hard-to-reach airports, avoiding the queues and beating the blues."
+            ],
+            "button": {
+              "label": "Read on",
+              "route": "Jets"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "quote",
+      "data": {
+        "quote": "“The PC-24 truly is a unicorn, there is no other aircraft which comes remotely close.”",
+        "author": "Marc, PC-24 Captain",
+        "imageLeft": "https://content.flyplatoon.com/website/home-quote-1.jpg",
+        "imageRight": "https://content.flyplatoon.com/website/home-quote-2.jpg"
+      }
+    },
+    {
+      "type": "magazine",
+      "data": {
+        "overline": "The Experience",
+        "headline": "Time to put your head in the clouds",
+        "copy": [
+          "Whether it is fine dining at 45,000ft or a business meeting in the sky, think of PLATOON as your wingman. We are here to make your flight not just any flight – but “the flight”. To take care of your journey from A&nbsp;to&nbsp;Z, and everything in-between. Sit back, relax, and leave all the details to us. "
+        ],
+        "button": {
+          "label": "Read on",
+          "route": "Experience"
+        },
+        "imageSet": {
+          "mobile": "https://content.flyplatoon.com/website/home-experience-mobile.jpg",
+          "desktop": "https://content.flyplatoon.com/website/home-experience.jpg"
+        }
+      }
+    }
+  ]
+}

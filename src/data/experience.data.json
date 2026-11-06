@@ -1,0 +1,81 @@
+{
+  "storyCopy": [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor nisl viverra aliquet suspendisse ultrices convallis. Tellus posuere sed et arcu donec eu. Dapibus nec adipiscing sed ullamcorper magna at vestibulum. In amet nulla quis fermentum, pulvinar aliquam libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor nisl viverra aliquet suspendisse ultrices convallis.",
+    "Tellus posuere sed et arcu donec eu. Dapibus nec adipiscing sed ullamcorper magna at vestibulum. In amet nulla quis fermentum, pulvinar aliquam libero."
+  ],
+  "loop": [
+    {
+      "type": "facts",
+      "data": {
+        "items": [
+          {
+            "title": [
+              "At your service"
+            ],
+            "copy": "Enjoy a full-day’s jet rental at your full disposal.",
+            "illu": "plane-sky.svg"
+          },
+          {
+            "title": [
+              "Bags galore"
+            ],
+            "copy": "Moving house or just moving for the weekend, we have you covered.",
+            "illu": "lugguage.svg"
+          },
+          {
+            "title": [
+              "Safety first"
+            ],
+            "copy": "Compromise does not exist: we set the strictest standards in the sky.",
+            "illu": "jets.svg"
+          }
+        ]
+      }
+    },
+    {
+      "type": "textImage",
+      "data": {
+        "id": "experience",
+        "imageAsset": {
+          "image": "https://content.flyplatoon.com/website/experience-full-day.jpg",
+          "objectPosition": "10% center"
+        },
+        "imageMobile": [
+          "https://content.flyplatoon.com/website/experience-full-day-mobile.jpg"
+        ],
+        "content": [
+          {
+            "overline": "FULL-DAY RENTAL",
+            "headline": "Carpe Diem",
+            "copy": [
+              "When you fly PLATOON; you have an aircraft at your sole disposal, allowing you to plan to the last detail and spend the day your way. Fly to the destinations you want, pick up a friend en route, and pack more in."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "statement",
+      "data": {
+        "overline": "Your home in the sky",
+        "quote": "From a warm welcome on take-off to a cheery ciao on landing, we want you to think of our jet as “your home in the sky”, where everything is designed to work around your comfort, your desires and your needs.",
+        "image": "https://content.flyplatoon.com/website/experience-statement.jpg",
+        "experience": true
+      }
+    },
+    {
+      "type": "magazine",
+      "data": {
+        "headline": "Elevated dining",
+        "copy": [
+          "From a light snack to a gourmet meal, PLATOON provides an exclusive range of menus to cater for any occasion. Tell us what you desire, and we’ll make it happen, simple."
+        ],
+        "imageSet": {
+          "mobile": "https://content.flyplatoon.com/website/home-experience-mobile.jpg",
+          "desktop": "https://content.flyplatoon.com/website/experience-food.jpg"
+        },
+        "stickyOut": true
+      }
+    }
+  ]
+}

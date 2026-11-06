@@ -1,0 +1,42 @@
+{
+  "name": "aviation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.b9694987.chunk.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node scripts/validate_playwright.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@types/hammerjs": "^2.0.46",
+    "@types/js-cookie": "^3.0.6",
+    "@types/lodash": "^4.17.27",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@types/react-router-dom": "^5.3.3",
+    "@vitejs/plugin-react": "^6.2.1",
+    "classnames": "^2.5.1",
+    "hammerjs": "^2.0.8",
+    "html-react-parser": "^6.1.9",
+    "ismobilejs": "^1.1.1",
+    "js-cookie": "^3.0.8",
+    "lodash": "^4.18.1",
+    "playwright": "^1.65.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.3.4",
+    "sass": "^1.108.0",
+    "sass-mq": "^7.0.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.6"
+  },
+  "devDependencies": {
+    "vite-plugin-svgr": "^5.2.0"
+  }
+}

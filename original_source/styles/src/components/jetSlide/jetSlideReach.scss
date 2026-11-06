@@ -1,0 +1,87 @@
+@import "styles/partials.scss";
+
+.jet-slide-reach {
+  @include mq($from: desktop) {
+    flex-direction: row;
+    height: 100vh;
+  }
+  background: $c-eggshell;
+  clip-path: inset(0 0 0 0);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+
+  object {
+    pointer-events: none;
+  }
+}
+
+.jet-slide-reach__graphics {
+  @include mq($from: desktop) {
+    flex-grow: 0;
+    width: 60%;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    transform: translate3d(0,var(--scroll, 0),0);
+    right: 0;
+    will-change: transform;
+  }
+  display: flex;
+  flex: 1 0 auto;
+  margin-left: auto;
+  position: relative;
+  width: 100%;
+
+  &:after {
+    @include mq($from: desktop) {
+      content: initial;
+    }
+    content: '';
+    display: block;
+    height: auto;
+    padding-bottom: 120%;
+    width: 100%;
+  }
+  object {
+    @include mq($from: desktop) {
+      height: 92%;
+      top: 0;
+      width: auto;
+    }
+    height: auto;
+    right: 0;
+    position: absolute;
+    width: 92%;
+  }
+}
+
+.jet-slide-reach__stats {
+  @include mq($from: desktop) {
+    align-items: flex-end;
+    bottom: initial;
+    top: 80px;
+  }
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  position: absolute;
+  bottom: 24px;
+  width: 100%;
+  z-index: 10;
+  > * {
+    // margin-right: 80px;
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+}
+
+g#eQunr8Lj31D22 {
+  display: none;
+  path {
+    display: none;
+  }
+}

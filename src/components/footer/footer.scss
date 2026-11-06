@@ -1,0 +1,209 @@
+@use "sass:math";
+
+@import "styles/partials.scss";
+
+$footer-chapter-padding: 4%;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+  &.with-chapters {
+    background: $c-ruby;
+    min-height: 100vh
+  }
+  &.with-background {
+    background: $c-ruby;
+  }
+  &.without-chapters {
+    margin-top: -1px;
+  }
+}
+
+.footer-chapter {
+  align-self: center;
+  display: flex;
+  flex: 1 0 auto;
+  padding: $topbar-height 0 0;
+}
+
+.footer-chapter__row {
+  @include mq($from: desktop) {
+    flex-direction: row;
+    padding: $topbar-height--desktop 0 40px;
+  }
+  @include mq($from: 1920px) {
+    padding: 40px 0 40px;
+
+  }
+  padding: $topbar-height 0 40px;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-left: $footer-chapter-padding * 0.5;
+  padding-right: $footer-chapter-padding * 0.5;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-chapter-item {
+  @include mq($from: desktop) {
+    padding: $footer-chapter-padding;
+    flex: 0 0 37%;
+  }
+  // min widht 1920
+  @include mq($from: 1920px) {
+    flex: 0 0 25%;
+  }
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+  flex: 1 0 auto;
+  &:nth-child(2) {
+    @include mq($from: desktop) {
+      // flex: 1 1 auto;
+    }
+  }
+  img {
+    @include mq($from: desktop) {
+      display: block;
+    }
+    display: none;
+    // Normalize every chapter tile to a uniform square regardless of the
+    // source image's native ratio (originals are 1024², others vary).
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    transition: 0.3s;
+  }
+  // img:hover {
+  //   transform: translate(0, -10px);
+  // }
+  flex: 1 0 25%;
+
+}
+
+.footer-chapter-header-title {
+  @include mq($from: desktop) {
+    margin: 0.3em 0 0;
+    @include fluid-typo($font-size-h3, $font-size-h2--max);
+  }
+  color: $c-eggshell;
+  font-size: 36px;
+  font-family: $font-family-headline;
+  margin: 0;
+  text-align: center;
+  transition: color .3s $easeOutCubic;
+  .footer-chapter-item:hover & {
+    color: $c-red;
+  }
+}
+
+.footer-legal {
+  @include mq($from: desktop) {
+    height: initial;
+  }
+  .with-chapters & {
+    @include mq($from: desktop) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    height: auto;
+    // padding-top: $padding-side*2;
+    // padding-bottom: $padding-side*2;
+  }
+  height: 100vh;
+  
+  // @include mq($until: desktop) {
+  //   padding-top: $padding-side;
+  //   padding-bottom: $padding-side;
+  // }
+}
+
+// Legal
+.footer-legal__row {
+  @include mq($from: desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 math.div($padding-side--desktop,1.5);
+  }
+  align-items: center;
+  display: flex;
+  box-sizing: border-box;
+  height: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: $padding-side--tablet;
+  padding: $padding-side--tablet;
+  .without-chapters & {
+    @include mq($from: desktop) {
+      justify-content: space-between;
+    }
+    justify-content: center;
+  }
+}
+
+.footer-legal__group {
+  @include mq($from: tablet) {
+    padding: calc(#{$padding-side--tablet}*0.5) 0;
+  }
+  @include mq($from: desktop) {
+    padding: calc(#{$padding-side--desktop}*0.5) 0;
+  }
+  padding: $padding-side*0.5 0;
+  &.is-mobile {
+    @include mq($from: desktop) {
+      display: none;
+    }
+  }
+  &.is-desktop {
+    @include mq($until: desktop) {
+      display: none;
+    }
+  }
+  &.is-double {
+    @include mq($until: desktop) {
+      display: flex;
+      :first-child {
+        &:after {
+          content: ' | ';
+          display: inline-block;
+          padding: 0 4px;
+        }
+      }
+    }
+  }
+  .without-chapters & {
+    padding: $padding-side 0;
+  }
+}
+
+.footer-legal__group--contact {
+  @include mq($until: desktop) {
+    // .without-chapters & {
+    //   align-items: center;
+    //   position: absolute;
+    //   font-size: 2em;
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   left: 0;
+    //   right: 0;
+    //   top: 0;
+    //   bottom: 0;
+    //   margin: auto;
+    //   .footer-legal-item {
+    //     align-self: center;
+    //   }
+    // }
+  }
+}
+
