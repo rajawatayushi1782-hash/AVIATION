@@ -1,10 +1,6 @@
 @import "styles/partials.scss";
 
 .quote {
-  @include mq($from: desktop) {
-    min-height: 150vh;
-    padding-bottom: 0;
-  }
   align-items: center;
   display: flex;
   justify-content: center;
@@ -12,6 +8,11 @@
   padding-bottom: 36px;
   pointer-events: none;
   width: 100%;
+
+  @include mq($from: desktop) {
+    min-height: 150vh;
+    padding-bottom: 0;
+  }
 }
 
 .quote__images {

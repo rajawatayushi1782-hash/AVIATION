@@ -1,17 +1,18 @@
 @import "styles/partials.scss";
 
 .text-image {
-  @include mq($from: desktop) {
-    min-height: 100vh;
-    flex-direction: row;
-    pointer-events: none;
-  }
   background-color: $c-eggshell;
   box-sizing: border-box;
   flex-direction: column;
   display: flex;
   overflow: hidden;
   position: relative;
+
+  @include mq($from: desktop) {
+    min-height: 100vh;
+    flex-direction: row;
+    pointer-events: none;
+  }
 
   &.is-in {
     pointer-events: initial;

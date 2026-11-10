@@ -26,6 +26,12 @@ $cookie-notice-padding-side-desktop: 20px;
 }
 
 .cookieNotice__inner {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-mono;
+  padding: $padding-side;
+  width: 100%;
+
   @include mq($from: tablet) {
     padding: $padding-side--tablet;
   }
@@ -33,15 +39,12 @@ $cookie-notice-padding-side-desktop: 20px;
     // flex-direction: row;
     padding: $cookie-notice-padding-side-desktop;
   }
-  display: flex;
-  flex-direction: column;
-  font-family: $font-family-mono;
-  padding: $padding-side;
-  width: 100%;
 }
 
 .cookieNotice__inner-paragraph {
   @include fluid-typo(14px, 14px);
+  padding-bottom: $padding-side;
+
   @include mq($from: tablet) {
     padding-bottom: $padding-side--tablet;
   };
@@ -49,7 +52,6 @@ $cookie-notice-padding-side-desktop: 20px;
     text-align: left;
     padding-bottom: $cookie-notice-padding-side-desktop;
   };
-  padding-bottom: $padding-side;
   // text-align: center;
 }
 

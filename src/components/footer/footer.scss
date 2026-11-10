@@ -108,19 +108,19 @@ $footer-chapter-padding: 4%;
 }
 
 .footer-legal {
-  @include mq($from: desktop) {
-    height: initial;
-  }
+  height: 100vh;
+
   .with-chapters & {
+    height: auto;
     @include mq($from: desktop) {
       padding-top: 0;
       padding-bottom: 0;
     }
-    height: auto;
-    // padding-top: $padding-side*2;
-    // padding-bottom: $padding-side*2;
   }
-  height: 100vh;
+
+  @include mq($from: desktop) {
+    height: auto;
+  }
   
   // @include mq($until: desktop) {
   //   padding-top: $padding-side;
@@ -130,11 +130,6 @@ $footer-chapter-padding: 4%;
 
 // Legal
 .footer-legal__row {
-  @include mq($from: desktop) {
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 math.div($padding-side--desktop,1.5);
-  }
   align-items: center;
   display: flex;
   box-sizing: border-box;
@@ -142,12 +137,18 @@ $footer-chapter-padding: 4%;
   flex-direction: column;
   justify-content: flex-end;
   padding: $padding-side--tablet;
-  padding: $padding-side--tablet;
+
+  @include mq($from: desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 math.div($padding-side--desktop,1.5);
+  }
+
   .without-chapters & {
+    justify-content: center;
     @include mq($from: desktop) {
       justify-content: space-between;
     }
-    justify-content: center;
   }
 }
 

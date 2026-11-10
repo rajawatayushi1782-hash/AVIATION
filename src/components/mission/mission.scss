@@ -1,6 +1,12 @@
 @import "styles/partials.scss";
 
 .mission {
+  background-color: $c-eggshell;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: $padding-side*3 0 $padding-side*3;
+  will-change: opacity;
+
   @include mq($until: desktop) {
     opacity: 1 !important;
   }
@@ -11,11 +17,6 @@
     min-height: 100vh;
     padding-bottom: 40vh;
   }
-  background-color: $c-eggshell;
-  box-sizing: border-box;
-  min-height: 100vh;
-  padding: $padding-side*3 0 $padding-side*3;
-  will-change: opacity;
   &.is-out {
     opacity: 0;
     line-height: 1.8;
