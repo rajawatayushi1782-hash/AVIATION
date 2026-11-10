@@ -105,6 +105,12 @@ $t-facts-in-d: 0.6s;
   margin: 0 auto $padding-side*2;
   position: relative;
   width: 120px;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 75 / 100;
+  }
 }
 
 .facts-item__content {

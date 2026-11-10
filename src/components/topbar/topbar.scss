@@ -52,6 +52,8 @@
   img {
     height: 100%;
     width: auto;
+    aspect-ratio: 470.38 / 114.96;
+    display: block;
   }
   .is-out & {
     pointer-events: none;
