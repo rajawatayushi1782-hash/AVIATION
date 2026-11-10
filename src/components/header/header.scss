@@ -23,12 +23,6 @@
 }
 
 .header-title {
-  @include mq($from: tablet) {
-    padding: $padding-side--tablet;
-  }
-  @include mq($from: tablet) {
-    padding: $padding-side--desktop;
-  }
   box-sizing: border-box;
   position: absolute;
   bottom: 0;
@@ -38,6 +32,13 @@
   padding: $padding-side;
   width: 100%;
   z-index: $z-header-titles;
+
+  @include mq($from: tablet) {
+    padding: $padding-side--tablet;
+  }
+  @include mq($from: desktop) {
+    padding: $padding-side--desktop;
+  }
   h1 {
     margin: 0;
   }

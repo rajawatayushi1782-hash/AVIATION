@@ -30,15 +30,16 @@
 }
 
 .text-image__inner {
-  @include mq($from: desktop) {
-    height: 100%;
-    flex-direction: column;
-  }
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   top: 0;
   width: 100%;
+
+  @include mq($from: desktop) {
+    height: 100%;
+    flex-direction: column;
+  }
 }
 
 // custom out

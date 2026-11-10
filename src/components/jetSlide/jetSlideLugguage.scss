@@ -16,6 +16,16 @@
 }
 
 .jet-slide-lugguage__items {
+  align-items: center;
+  height: 60vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10vh;
+  max-width: 960px;
+  width: 100%;
+  position: absolute;
+
   @include mq($from: desktop) {
     flex-direction: row;
     height: 60vh;
@@ -26,16 +36,6 @@
     transform: translate3d(0, var(--scroll, 0), 0);
     will-change: transform;
   }
-  align-items: center;
-  height: 60vh;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 10vh;
-  max-width: 960px;
-  width: 100%;
-  //
-  position: absolute;
   .is-absolute & {
     transform: initial;
     position: absolute;

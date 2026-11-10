@@ -64,3 +64,4 @@ async function testPage(url, label) {
   fs.writeFileSync(path.resolve(__dirname, '../screenshots/audit/comparison_frames.json'), JSON.stringify({ orig, clone }, null, 2));
   console.log('Saved comparison_frames.json');
 })();
+

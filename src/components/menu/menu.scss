@@ -41,10 +41,6 @@
 
 // LEFT MENU
 .menu__left {
-  @include mq($from: desktop) {
-    height: 60vh;
-    width: 50%;
-  }
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -53,6 +49,11 @@
   height: 50vh;
   width: 100%;
   z-index: 10;
+
+  @include mq($from: desktop) {
+    height: 60vh;
+    width: 50%;
+  }
   .menu.is-desktop & {
     @include mq($from: desktop) {
       text-align: left;

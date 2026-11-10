@@ -6,6 +6,11 @@
 }
 
 .statement__image {
+  box-sizing: border-box;
+  padding-left: $padding-side;
+  padding-right: $padding-side;
+  width: 100%;
+
   @include mq($from: tablet) {
     padding-left: $padding-side--tablet;
     padding-right: $padding-side--tablet;
@@ -15,10 +20,6 @@
     padding-right: $padding-side--desktop;
     width: 40%;
   }
-  box-sizing: border-box;
-  padding-left: $padding-side;
-  padding-right: $padding-side;
-  width: 100%;
   img {
     height: auto;
     max-width: 100%;

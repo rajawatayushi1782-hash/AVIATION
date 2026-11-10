@@ -1,10 +1,12 @@
 @import "styles/partials.scss";
 
 .content-block {
+  width: auto;
+
   @include mq($from: desktop) {
     min-height: 100vh;
   }
-  width: auto;
+
   &.is-fixed {
     @include mq($from: desktop) {
       height: $text-image-height--desktop;
@@ -14,9 +16,16 @@
 }
 
 .content-block__container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: $padding-side $padding-side 48px;
+  width: 100%;
+
   @include mq($from: tablet) {
     padding: $padding-side--tablet;
   }
+
   @include mq($from: desktop) {
     left: 0;
     padding: $padding-side--desktop;
@@ -38,15 +47,12 @@
       transform: translate3d(0, var(--scroll, 0), 0);
     }
   }
+
   @include mq($from: wide) {
     padding: $padding-side--desktop*1.5;
     padding-top: 0;
   }
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  padding: $padding-side $padding-side 48px;
-  width: 100%;
+
   .is-inverted & {
     color: $c-eggshell;
   }

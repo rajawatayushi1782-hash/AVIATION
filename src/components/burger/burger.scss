@@ -16,14 +16,6 @@ $hamburger-hover-opacity: 1;
 $hamburger-types: (spring, squeeze);
 
 .burger {
-  @include mq($from: tablet) {
-    height: $topbar-height--tablet;
-    width: $topbar-height--tablet;
-  }
-  @include mq($from: desktop) {
-    height: $topbar-height--desktop;
-    width: $topbar-height--desktop;
-  }
   align-items: center;
   display: flex;
   height: $topbar-height;
@@ -33,6 +25,15 @@ $hamburger-types: (spring, squeeze);
   top: 0;
   width: $topbar-height;
   z-index: $z-burger;
+
+  @include mq($from: tablet) {
+    height: $topbar-height--tablet;
+    width: $topbar-height--tablet;
+  }
+  @include mq($from: desktop) {
+    height: $topbar-height--desktop;
+    width: $topbar-height--desktop;
+  }
 }
 
 .hamburger,
