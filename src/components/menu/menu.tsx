@@ -1,165 +1,142 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
-//
 import "./menu.scss";
-import data from "data/app.data.json";
-import { useHistory } from "react-router";
 import { ROUTES } from "constants/routes";
-import * as utils from "shell/app/app.utils";
-import { VIEWPORT } from "constants/viewport";
-import footerData from "data/footer.data.json";
-import FooterLegalItem from "components/footer/footerLegalItem";
 
-interface menuProps {
+interface MenuProps {
   isOpen: boolean;
+  onClose?: () => void;
 }
 
-const Menu: React.FC<menuProps> = (props) => {
-  const [active, setActive] = useState<number>(-1);
-  const current = useRef<number>(-1);
-  const history = useHistory();
-  const isDesktop = window.innerWidth >= VIEWPORT.Desktop;
-  const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
-  const aFrame = useRef<any>(0);
-  const aPosition = useRef({ x: 0, y: 0 });
-  const imagesRef = useRef<HTMLDivElement>(null);
-  //
-  const resetTimeout = useRef<any>();
-  const resetActive = () => {
-    resetTimeout.current = setTimeout(() => {
-      setActive(current.current);
-    }, 100);
+interface NavItem {
+  label: string;
+  route: string;
+}
+
+// 6 navigation links arranged for the 2-column grid:
+// Row 1: Home            | Sponsoring
+// Row 2: The Jets        | Our Story
+// Row 3: The Experience  | Career
+const NAV_ITEMS: NavItem[] = [
+  { label: "Home", route: ROUTES.Home },
+  { label: "Sponsoring", route: ROUTES.Sponsoring },
+  { label: "The Jets", route: ROUTES.Jets },
+  { label: "Our Story", route: ROUTES.Story },
+  { label: "The Experience", route: ROUTES.Experience },
+  { label: "Career", route: ROUTES.Career },
+];
+
+const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
+  const handleLinkClick = () => {
+    if (onClose) {
+      onClose();
+    }
   };
 
-  useLayoutEffect(() => {
-    const render = () => {
-      aPosition.current.x = utils.lerp(
-        aPosition.current.x,
-        mouse.current.x,
-        0.1
-      );
-      aPosition.current.y = utils.lerp(
-        aPosition.current.y,
-        mouse.current.y,
-        0.1
-      );
-
-      const movel = imagesRef.current;
-      if (movel) {
-        movel.style.transform = `translate(0,${
-          (5 / 100) * aPosition.current.y
-        }vh)`;
-      }
-      aFrame.current = requestAnimationFrame(render);
-    };
-    props.isOpen && (aFrame.current = requestAnimationFrame(render));
-    return () => cancelAnimationFrame(aFrame.current);
-  }, [props.isOpen]);
-
-  useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      mouse.current = {
-        x:
-          (100 / (window.innerWidth / 2)) * (e.clientX - window.innerWidth / 2),
-        y:
-          (100 / (window.innerHeight / 2)) *
-          (e.clientY - window.innerHeight / 2),
-      };
-    };
-
-    document.addEventListener("mousemove", handleMouseMove);
-    return () => document.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  //
   return (
     <div
-      className={classNames(
-        "menu",
-        { "is-open": props.isOpen },
-        { "is-desktop": isDesktop }
-      )}
+      className={classNames("menu", { "is-open": isOpen })}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Navigation Menu"
     >
-      {/* <div className="menu__background" /> */}
-      <div className="menu__wrapper wrapper">
-        <div className="menu__inner grid-row">
-          <div className="menu__left grid-cell">
-            {data.pages
-              .filter((item) => item.route !== "Imprint" && item.route !== "PrivacyPolicy")
-              .map((item, key) => {
-              const route = ROUTES[item.route as keyof typeof ROUTES];
-              if (
-                route === history.location.pathname &&
-                current.current === -1
-              ) {
-                current.current = key;
-                setActive(key);
-              }
+      {/* Header spacer to prevent any collision with the centered logo & burger */}
+      <div className="menu__header-spacer" />
 
-              const length = data.pages.filter((item) => item.route !== "Imprint" && item.route !== "PrivacyPolicy").length;
-              return (
-                <NavLink
-                  exact
-                  to={{ pathname: route, state: "skipTimeout" }}
-                  className="menu-item"
-                  key={key}
-                  onMouseOver={() => {
-                    setActive(key);
-                    clearTimeout(resetTimeout.current);
-                  }}
-                  onMouseOut={resetActive}
-                  style={{
-                    transitionDelay: `${
-                      0.2 + (0.4 / length) * (length - key)
-                    }s`,
-                  }}
-                >
-                  <span>{item.menuTitle}</span>
-                </NavLink>
-              );
-            })}
-            <NavLink
-              exact
-              to={{ pathname: ROUTES.Imprint, state: "skipTimeout" }}
-              className="menu-item"
-              onMouseOver={() => {
-                setActive(-1);
-                clearTimeout(resetTimeout.current);
-              }}
-              onMouseOut={resetActive}
-              style={{
-                transitionDelay: `${0.2}s`,
-              }}
+      {/* Main navigation container with 2-column grid */}
+      <div className="menu__nav-wrapper">
+        <nav className="menu__grid" aria-label="Main Navigation">
+          {NAV_ITEMS.map((item, index) => (
+            <div className="menu__item-wrapper" key={item.label}>
+              <NavLink
+                exact
+                to={{ pathname: item.route, state: "skipTimeout" }}
+                className="menu__link"
+                activeClassName="active"
+                onClick={handleLinkClick}
+                style={{
+                  transitionDelay: isOpen ? `${0.12 + index * 0.05}s` : "0s",
+                }}
+              >
+                <span>{item.label}</span>
+              </NavLink>
+            </div>
+          ))}
+        </nav>
+      </div>
+
+      {/* 3-Column Balanced Footer */}
+      <footer className="menu__footer">
+        <div className="menu__footer-inner">
+          {/* Column 1 (LEFT): Copyright & Location */}
+          <div className="menu__footer-col menu__footer-col--left">
+            <span className="menu__footer-text">©2026 Platoon Aviation</span>
+            <span className="menu__footer-text">From Hamburg with love</span>
+          </div>
+
+          {/* Column 2 (CENTER): Phone & Email */}
+          <div className="menu__footer-col menu__footer-col--center">
+            <a
+              href="tel:+4940285330247"
+              className="menu__footer-link"
+              aria-label="Call Platoon Aviation at +49 40 285 330-247"
             >
-              <span>Imprint</span>
-            </NavLink>
+              +49 40 285 330-247
+            </a>
+            <a
+              href="mailto:hello@flyplatoon.com"
+              className="menu__footer-link"
+              aria-label="Email Platoon Aviation at hello@flyplatoon.com"
+            >
+              hello@flyplatoon.com
+            </a>
           </div>
-          <div className="menu__images grid-cell" ref={imagesRef}>
-            {data.pages
-              .filter((item) => item.route !== "Imprint" && item.route !== "PrivacyPolicy")
-              .map((item, key) => (
-              <img
-                src={utils.assetPath(item.menuImg)}
-                alt={item.menuTitle}
-                className={classNames({ "is-active": key === active })}
-                key={key}
-                loading="lazy"
-                decoding="async"
-              />
-            ))}
+
+          {/* Column 3 (RIGHT): Social links & Legal pages */}
+          <div className="menu__footer-col menu__footer-col--right">
+            <div className="menu__footer-subcol">
+              <a
+                href="https://www.linkedin.com/company/platoon-aviation"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="menu__footer-link"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://www.instagram.com/flyplatoon/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="menu__footer-link"
+              >
+                Instagram
+              </a>
+            </div>
+            <div className="menu__footer-subcol">
+              <NavLink
+                exact
+                to={{ pathname: ROUTES.Imprint, state: "skipTimeout" }}
+                className="menu__footer-link"
+                activeClassName="active"
+                onClick={handleLinkClick}
+              >
+                Imprint
+              </NavLink>
+              <NavLink
+                exact
+                to={{ pathname: ROUTES.PrivacyPolicy, state: "skipTimeout" }}
+                className="menu__footer-link"
+                activeClassName="active"
+                onClick={handleLinkClick}
+              >
+                Privacy Policy
+              </NavLink>
+            </div>
           </div>
         </div>
-      </div>
-        <div className="menu__footer">
-          {/* <Footer /> */}
-          {/* <div className="menu__footer-mobile"> */}
-            {footerData.contact.map((item, key) => {
-              return <FooterLegalItem label={item.label} link={item.link} key={key} />;
-            })}
-          {/* </div> */}
-        </div>
-      </div>
+      </footer>
+    </div>
   );
 };
 

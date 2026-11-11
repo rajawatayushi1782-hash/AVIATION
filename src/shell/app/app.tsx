@@ -142,7 +142,7 @@ const App: React.FC<{}> = () => {
         menuOpen={menuOpen}
       />
       {/* MENU */}
-      <Menu isOpen={menuOpen} />
+      <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       {/* HEADER */}
       <Header pathname={location?.pathname} onReady={handleHeaderReady} />
       {/* LOADER */}
