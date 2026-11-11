@@ -15,9 +15,12 @@ interface NavItem {
 }
 
 // 6 navigation links arranged for the 2-column grid:
-// Row 1: Home            | Sponsoring
-// Row 2: The Jets        | Our Story
-// Row 3: The Experience  | Career
+// Column 1: Home, The Jets, The Experience
+// Column 2: Sponsoring, Our Story, Career
+// Displayed as:
+// Home         Sponsoring
+// The Jets     Our Story
+// The Experience Career
 const NAV_ITEMS: NavItem[] = [
   { label: "Home", route: ROUTES.Home },
   { label: "Sponsoring", route: ROUTES.Sponsoring },
@@ -93,46 +96,42 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
             </a>
           </div>
 
-          {/* Column 3 (RIGHT): Social links & Legal pages */}
+          {/* Column 3 (RIGHT): Social links & Legal pages in a single vertical column */}
           <div className="menu__footer-col menu__footer-col--right">
-            <div className="menu__footer-subcol">
-              <a
-                href="https://www.linkedin.com/company/platoon-aviation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="menu__footer-link"
-              >
-                LinkedIn
-              </a>
-              <a
-                href="https://www.instagram.com/flyplatoon/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="menu__footer-link"
-              >
-                Instagram
-              </a>
-            </div>
-            <div className="menu__footer-subcol">
-              <NavLink
-                exact
-                to={{ pathname: ROUTES.Imprint, state: "skipTimeout" }}
-                className="menu__footer-link"
-                activeClassName="active"
-                onClick={handleLinkClick}
-              >
-                Imprint
-              </NavLink>
-              <NavLink
-                exact
-                to={{ pathname: ROUTES.PrivacyPolicy, state: "skipTimeout" }}
-                className="menu__footer-link"
-                activeClassName="active"
-                onClick={handleLinkClick}
-              >
-                Privacy Policy
-              </NavLink>
-            </div>
+            <a
+              href="https://www.linkedin.com/company/platoon-aviation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="menu__footer-link"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://www.instagram.com/flyplatoon/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="menu__footer-link"
+            >
+              Instagram
+            </a>
+            <NavLink
+              exact
+              to={{ pathname: ROUTES.Imprint, state: "skipTimeout" }}
+              className="menu__footer-link"
+              activeClassName="active"
+              onClick={handleLinkClick}
+            >
+              Imprint
+            </NavLink>
+            <NavLink
+              exact
+              to={{ pathname: ROUTES.PrivacyPolicy, state: "skipTimeout" }}
+              className="menu__footer-link"
+              activeClassName="active"
+              onClick={handleLinkClick}
+            >
+              Privacy Policy
+            </NavLink>
           </div>
         </div>
       </footer>
