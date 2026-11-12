@@ -49,54 +49,65 @@
     height: auto;
     max-width: 100%;
   }
+
   &:nth-child(1) {
+    align-self: flex-start;
+    z-index: 1;
+
     @include mq($from: desktop) {
       transform: translate3d(0, calc(100vh * var(--progress, 0)), 0);
       will-change: transform;
     }
-    align-self: flex-start;
-    z-index: 1;
+
     img {
+      transform: translate3d(0, calc(20% * var(--progress, 0)), 0);
+      will-change: transform;
+
       @include mq($from: desktop) {
         transform: translate3d(0, calc(-160% + 160% * var(--progress, 0)), 0);
         will-change: transform;
       }
-      transform: translate3d(0, calc(20% * var(--progress, 0)), 0);
-      will-change: transform;
     }
   }
+
   &:nth-child(2) {
+    align-self: flex-end;
+
     @include mq($from: desktop) {
       margin-top: 0%;
       transform: translate3d(0, calc(-100vh * var(--progress, 0)), 0);
       will-change: transform;
     }
-    align-self: flex-end;
-    // margin-top: -20%;
+
     img {
+      transform: translate3d(0, calc(-50% * var(--progress, 0)), 0);
+      will-change: transform;
+
       @include mq($from: desktop) {
         transform: translate3d(0, calc(120% - 120% * var(--progress, 0)), 0);
       }
-      transform: translate3d(0, calc(-50% * var(--progress, 0)), 0);
-      will-change: transform;
     }
   }
+
   &:nth-child(3) {
+    align-self: center;
+    margin-top: -5%;
+    z-index: 1;
+
     @include mq($from: desktop) {
       align-self: flex-start;
       margin-top: 0%;
       transform: translate3d(0, calc(100vh * var(--progress, 0)), 0);
       will-change: transform;
     }
-    align-self: center;
-    margin-top: -5%;
-    z-index: 1;
+
     img {
+      transform: translate3d(0, calc(-10% * var(--progress, 0)), 0);
+      will-change: transform;
+
       @include mq($from: desktop) {
         transform: translate3d(0, calc(-200% + 260% * var(--progress, 0)), 0);
       }
-      transform: translate3d(0, calc(-10% * var(--progress, 0)), 0);
-      will-change: transform;
     }
   }
 }
