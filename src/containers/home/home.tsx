@@ -12,7 +12,7 @@ const Home: React.FC<homeProps> = (props) => (
     <div className="home__inner">
       <Mission {...data.mission} />
       <Loop {...data} />
-      <Footer withChapters withBackground />
+      <Footer withBackground />
     </div>
   </div>
 );
