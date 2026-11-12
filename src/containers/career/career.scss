@@ -1,46 +1,44 @@
 @import "styles/partials.scss";
-.career {
-  padding-top: 100vh;
-  padding-bottom: 100vh;
-}
 
-.career__inner {
-  background-color: $c-eggshell;
-  clip-path: inset(0 0 0 0);
-}
 .career {
   position: relative;
   z-index: 100;
+  padding-top: 100vh;
+  padding-bottom: 100vh;
+
   p {
     margin-top: 1em;
     margin-bottom: 1em;
+
     &:first-of-type {
-      margin: 0;
+      margin-top: 0;
     }
   }
-}
-
-.career__content-block {
-  margin-bottom: 4em;
 }
 
 .career__inner {
   background-color: $c-eggshell;
   min-height: 100vh;
+  clip-path: inset(0 0 0 0);
+
   a {
     color: $c-ruby;
   }
 }
 
 .career__content {
+  box-sizing: border-box;
+  padding-top: 72px;
+  padding-bottom: 64px;
+
   @include mq($from: tablet) {
     padding-top: $topbar-height--tablet;
   }
+
   @include mq($from: desktop) {
     padding-top: $topbar-height--desktop;
   }
-  padding-top: $topbar-height;
-  padding-bottom: 64px;
+
   h3 {
     color: $c-ruby;
     text-align: center;
@@ -48,42 +46,48 @@
 }
 
 .career__content-header {
+  font-family: $font-family-headline;
+  font-size: clamp(37.9px, 4.44vw, 64px);
+  line-height: 0.95;
   margin: 1em 0;
   text-align: center;
+  color: $c-dark;
 }
 
 .career__content-headline {
   font-family: $font-family-headline;
-  font-size: $font-size-h2;
+  font-size: 36px;
+  line-height: 0.95;
+  margin: 10.8px 0;
+  color: $c-dark;
+
   a {
     color: $c-ruby;
   }
 }
 
-.career__content-paragraph {
-  font-family: $font-family;
-  font-size: $font-size;
-  line-height: 1.8;
-  a {
-    color: $c-ruby;
-  }
-  b {
-    font-weight: bold;
-  }
-}
+.career__content-block {
+  margin-bottom: 4em;
 
-.job-content {
-  max-height: 0; /* Start collapsed */
-  overflow: hidden; /* Hide overflow */
-  transition: max-height 0.5s ease; /* Smooth transition */
-  
-  &.visible {
-    display: block; /* Show when visible */
-    max-height: 2000px; /* Set a max height for expansion */
+  p {
+    font-family: $font-family;
+    font-size: 16px;
+    line-height: 1.8;
+    color: $c-dark;
   }
 
-  &.hidden {
-    display: none; /* Ensure it's hidden when not visible */
+  ul {
+    margin: 16px 0;
+    padding-left: 24px;
+    list-style-type: disc;
+
+    li {
+      font-family: $font-family;
+      font-size: 14px;
+      line-height: 1.6;
+      color: $c-dark;
+      margin-bottom: 6px;
+    }
   }
 }
 
@@ -91,22 +95,102 @@
   margin-bottom: 4em;
 
   hr {
+    border: none;
+    border-top: 1px inset rgb(128, 128, 128);
     opacity: 0.5;
+    margin: 10.5px 0;
+  }
+}
+
+.job-offer {
+  position: relative;
+
+  h2,
+  .job-offer__title {
+    font-family: $font-family-headline;
+    font-size: clamp(37.9px, 4.44vw, 64px);
+    line-height: 0.95;
+    color: $c-dark;
+    cursor: pointer;
+    margin: 25px 0 19.2px;
+    transition: color 0.3s ease;
+    word-break: break-word;
+
+    &:hover {
+      color: $c-red;
+    }
+  }
+}
+
+.job-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  color: $c-dark;
+
+  &.visible {
+    display: block;
+    max-height: 2500px;
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  h4 {
+    font-family: $font-family-headline;
+    font-size: clamp(22px, 2.2vw, 32px);
+    line-height: 1.2;
+    margin: 24px 0 12px;
+    color: $c-dark;
+  }
+
+  ul {
+    margin: 12px 0 20px;
+    padding-left: 24px;
+    list-style-type: disc;
+
+    li {
+      font-family: $font-family;
+      font-size: 14px;
+      line-height: 1.6;
+      color: $c-dark;
+      margin-bottom: 6px;
+    }
+  }
+
+  p {
+    font-family: $font-family;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 12px 0;
+    color: $c-dark;
+  }
+
+  a {
+    color: $c-ruby;
+    text-decoration: underline;
+
+    &:hover {
+      color: $c-red;
+    }
   }
 }
 
 .apply-button {
   display: inline-block;
-  background-color: $c-ruby;
-  color: white !important;
+  background-color: rgb(40, 10, 11);
   padding: 10px 20px;
-  text-decoration: none;
+  text-decoration: none !important;
   border-radius: 5px;
   margin-top: 15px;
   margin-bottom: 50px;
   transition: background-color 0.3s ease;
+  color: rgb(255, 255, 255) !important;
+  font-family: $font-family;
+  font-size: 15px;
 
   &:hover {
-    background-color: darken($c-ruby, 10%);
+    background-color: rgb(0, 0, 0);
   }
 }
