@@ -10,172 +10,97 @@ $footer-chapter-padding: 4%;
   position: relative;
   width: 100%;
   z-index: 10;
-  
   &.with-chapters {
     background: $c-ruby;
-    min-height: 100vh;
-    justify-content: space-between;
+    min-height: 100vh
   }
-  
   &.with-background {
     background: $c-ruby;
   }
-  
   &.without-chapters {
     margin-top: -1px;
   }
 }
 
-// Chapters preview section
 .footer-chapter {
   align-self: center;
-  box-sizing: border-box;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
   flex: 1 0 auto;
-  padding: 80px $padding-side 40px;
-
-  @include mq($from: tablet) {
-    padding: 100px $padding-side--tablet 50px;
-  }
-
-  @include mq($from: desktop) {
-    padding: 120px $padding-side--desktop 60px;
-  }
-
-  @include mq($from: 1600px) {
-    padding: 140px $padding-side--desktop 70px;
-  }
+  padding: $topbar-height 0 0;
+  width: 100%;
 }
 
 .footer-chapter__row {
+  align-items: center;
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: $topbar-height $padding-side 40px;
   width: 100%;
-  max-width: 360px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0;
 
   @include mq($from: tablet) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 28px;
-    max-width: 720px;
+    flex-direction: row;
+    padding: $topbar-height--tablet $padding-side--tablet 40px;
   }
 
   @include mq($from: desktop) {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px 32px;
-    max-width: 1400px;
-  }
-
-  @include mq($from: 1600px) {
-    gap: 40px 36px;
-    max-width: 1540px;
+    flex-direction: row;
+    padding: $topbar-height--desktop $padding-side--desktop 40px;
   }
 }
 
-// Chapter item card
 .footer-chapter-item {
   align-items: center;
   box-sizing: border-box;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
-  position: relative;
   text-decoration: none;
   width: 100%;
-  animation: footerCardReveal 0.8s $easeOutCubic both;
+  padding: 16px;
 
-  @for $i from 1 through 6 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.08}s;
-    }
+  @include mq($from: tablet) {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px;
   }
 
-  // Desktop 2-row layout: 4 in Row 1, 2 in Row 2 centered below cols 2 and 3
   @include mq($from: desktop) {
-    &:nth-child(5) {
-      grid-column: 2;
-    }
-    &:nth-child(6) {
-      grid-column: 3;
-    }
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 24px;
   }
 
-  // Hover animations
-  &:hover {
-    .footer-chapter-item__image-wrap img,
-    img {
-      transform: scale(1.05);
-    }
-    .footer-chapter-header-title {
-      color: $c-red;
-    }
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    height: auto;
+    max-width: 100%;
+    transition: transform 0.4s $easeOutCubic;
   }
 
-  &.active {
-    .footer-chapter-header-title {
-      color: $c-red;
-    }
+  &:hover img {
+    transform: translateY(-8px);
   }
-}
-
-.footer-chapter-item__image-wrap {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  position: relative;
-  background: rgba(255, 255, 255, 0.04);
-}
-
-.footer-chapter-item img,
-.footer-chapter-item__image-wrap img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: transform 0.45s $easeOutCubic, opacity 0.3s ease;
 }
 
 .footer-chapter-header-title {
   color: $c-eggshell;
   font-family: $font-family-headline;
-  font-size: 20px;
-  line-height: 1.25;
-  margin: 12px 0 0;
+  font-size: clamp(20px, 2vw, 32px);
+  line-height: 1.2;
+  margin: 0.6em 0 0;
   text-align: center;
+  white-space: nowrap;
   transition: color 0.3s $easeOutCubic;
 
-  @include mq($from: tablet) {
-    font-size: 22px;
-    margin-top: 14px;
-  }
-
-  @include mq($from: desktop) {
-    font-size: 24px;
-    margin-top: 16px;
-  }
-
-  @include mq($from: 1600px) {
-    font-size: 26px;
-    margin-top: 18px;
-  }
-}
-
-@keyframes footerCardReveal {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .footer-chapter-item:hover & {
+    color: $c-red;
   }
 }
 

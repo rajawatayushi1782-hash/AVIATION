@@ -1,86 +1,84 @@
 @import "styles/partials.scss";
 
 .statement {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: clamp(60px, 10vh, 120px) 0;
-  box-sizing: border-box;
-  background-color: $c-eggshell;
+  height: 100vh;
+  padding-bottom: 20vh;
   position: relative;
-  z-index: 2;
 }
 
 .statement__inner {
   display: flex;
   flex-direction: column;
+  position: relative;
   width: 100%;
-  max-width: $wrapper-max-width;
-  margin: 0 auto;
-  padding: 0 $padding-side;
-  box-sizing: border-box;
-  gap: 32px;
-
-  @include mq($from: tablet) {
-    padding: 0 $padding-side--tablet;
-    gap: 40px;
-  }
 
   @include mq($from: desktop) {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 $padding-side--desktop;
-    gap: 50px;
+    height: 100%;
   }
 }
 
 .statement__image {
   box-sizing: border-box;
+  padding-left: $padding-side;
+  padding-right: $padding-side;
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
+
+  @include mq($from: tablet) {
+    padding-left: $padding-side--tablet;
+    padding-right: $padding-side--tablet;
+  }
 
   @include mq($from: desktop) {
-    flex: 0 0 39%;
-    max-width: 39%;
-    margin: 0;
+    padding-left: $padding-side--desktop;
+    padding-right: $padding-side--desktop;
+    width: 40%;
+    max-width: 40vw;
   }
 
   img {
     display: block;
-    width: 100%;
     height: auto;
-    aspect-ratio: 478.4 / 480;
-    object-fit: cover;
-    opacity: 0;
-    transform: scale(0.97);
-    transition: opacity 0.8s $easeOutCubic, transform 0.8s $easeOutCubic;
-
-    .statement.is-visible & {
-      opacity: 1;
-      transform: scale(1);
-    }
+    max-width: 100%;
+    width: 100%;
   }
 }
 
 .statement__quote {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+  margin-top: $padding-side * 3;
+  padding-left: $padding-side;
+  padding-right: $padding-side;
+  transition: opacity 0.6s $easeInOutCubic;
 
-  @include mq($from: desktop) {
-    flex: 1;
-    margin-top: 0;
+  @include mq($from: tablet) {
+    margin-top: $padding-side--tablet * 3;
+    padding-left: $padding-side--tablet;
+    padding-right: $padding-side--tablet;
   }
 
-  h6 {
-    margin: 0 0 16px 0;
-    font-family: $font-family-mono;
-    font-size: $font-size-overline;
-    color: $c-grey;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+  @include mq($from: desktop) {
+    position: fixed;
+    top: 0;
+    left: 40vw;
+    right: 0;
+    width: 60vw;
+    height: 100vh;
+    margin-top: 0;
+    padding-left: $padding-side--desktop;
+    padding-right: $padding-side--desktop;
+    opacity: 0;
+    transform: translateY(var(--scroll));
+  }
+
+  .is-visible & {
+    opacity: 1;
+    transition-delay: 0.6s;
   }
 
   p {
@@ -89,23 +87,16 @@
     font-family: $font-family-headline;
     line-height: $line-height-veritas-copy;
     margin: 0;
-    max-width: 820px;
+    max-width: 840px;
   }
 }
 
 .statement__quote-movel {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s $easeOutCubic, transform 0.8s $easeOutCubic;
-
-  .statement.is-visible & {
-    opacity: 1;
-    transform: translateY(0);
+  @include mq($from: desktop) {
+    transform: translateY(calc(10vh - 20vh * var(--progress, 0)));
   }
 
-  @include mq($from: desktop) {
-    .statement.is-visible & {
-      transform: translateY(calc(3vh - 6vh * var(--progress, 0)));
-    }
+  h6 {
+    margin-bottom: 0.8em;
   }
 }
