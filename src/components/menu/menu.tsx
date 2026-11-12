@@ -3,35 +3,57 @@ import { NavLink } from "react-router-dom";
 import classNames from "classnames";
 import "./menu.scss";
 import { ROUTES } from "constants/routes";
+import * as utils from "shell/app/app.utils";
 
 interface MenuProps {
   isOpen: boolean;
   onClose?: () => void;
 }
 
-interface NavItem {
+interface NavCard {
   label: string;
   route: string;
+  image: string;
 }
 
-// 6 navigation links arranged for the 2-column grid:
-// Column 1: Home, The Jets, The Experience
-// Column 2: Sponsoring, Our Story, Career
-// Displayed as:
-// Home         Sponsoring
-// The Jets     Our Story
-// The Experience Career
-const NAV_ITEMS: NavItem[] = [
-  { label: "Home", route: ROUTES.Home },
-  { label: "Sponsoring", route: ROUTES.Sponsoring },
-  { label: "The Jets", route: ROUTES.Jets },
-  { label: "Our Story", route: ROUTES.Story },
-  { label: "The Experience", route: ROUTES.Experience },
-  { label: "Career", route: ROUTES.Career },
+// 6 navigation cards matching original FlyPlatoon menu:
+// Row 1: Home | The Jets | The Experience | Career
+// Row 2: Sponsoring | Our Story
+const NAV_CARDS: NavCard[] = [
+  {
+    label: "Home",
+    route: ROUTES.Home,
+    image: "https://content.flyplatoon.com/website/menu-home.jpg",
+  },
+  {
+    label: "The Jets",
+    route: ROUTES.Jets,
+    image: "https://content.flyplatoon.com/website/menu-jets.jpg",
+  },
+  {
+    label: "The Experience",
+    route: ROUTES.Experience,
+    image: "https://content.flyplatoon.com/website/menu-experience.jpg",
+  },
+  {
+    label: "Career",
+    route: ROUTES.Career,
+    image: "https://content.flyplatoon.com/website/career_menu-title.jpg",
+  },
+  {
+    label: "Sponsoring",
+    route: ROUTES.Sponsoring,
+    image: "https://content.flyplatoon.com/website/sps_ptn_8.jpg",
+  },
+  {
+    label: "Our Story",
+    route: ROUTES.Story,
+    image: "https://content.flyplatoon.com/website/menu-story.jpg",
+  },
 ];
 
 const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
-  const handleLinkClick = () => {
+  const handleCardClick = () => {
     if (onClose) {
       onClose();
     }
@@ -44,94 +66,54 @@ const Menu: React.FC<MenuProps> = ({ isOpen, onClose }) => {
       aria-modal="true"
       aria-label="Navigation Menu"
     >
-      {/* Header spacer to prevent any collision with the centered logo & burger */}
+      {/* Header spacer to prevent collision with topbar logo and burger */}
       <div className="menu__header-spacer" />
 
-      {/* Main navigation container with 2-column grid */}
-      <div className="menu__nav-wrapper">
-        <nav className="menu__grid" aria-label="Main Navigation">
-          {NAV_ITEMS.map((item, index) => (
-            <div className="menu__item-wrapper" key={item.label}>
-              <NavLink
-                exact
-                to={{ pathname: item.route, state: "skipTimeout" }}
-                className="menu__link"
-                activeClassName="active"
-                onClick={handleLinkClick}
-                style={{
-                  transitionDelay: isOpen ? `${0.12 + index * 0.05}s` : "0s",
-                }}
-              >
-                <span>{item.label}</span>
-              </NavLink>
-            </div>
+      {/* Main navigation container with 6 image cards */}
+      <div className="menu__cards-container">
+        <nav className="menu__cards-grid" aria-label="Main Navigation">
+          {NAV_CARDS.map((card, index) => (
+            <NavLink
+              exact
+              to={{ pathname: card.route, state: "skipTimeout" }}
+              className="menu__card"
+              activeClassName="is-active"
+              key={card.label}
+              onClick={handleCardClick}
+              style={{
+                transitionDelay: isOpen ? `${0.08 + index * 0.04}s` : "0s",
+              }}
+            >
+              <div className="menu__card-image">
+                <img
+                  src={utils.assetPath(card.image)}
+                  alt={card.label}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <span className="menu__card-title">{card.label}</span>
+            </NavLink>
           ))}
         </nav>
       </div>
 
-      {/* 3-Column Balanced Footer */}
+      {/* Footer with legal & contact info */}
       <footer className="menu__footer">
         <div className="menu__footer-inner">
-          {/* Column 1 (LEFT): Copyright & Location */}
-          <div className="menu__footer-col menu__footer-col--left">
-            <span className="menu__footer-text">©2026 Platoon Aviation</span>
-            <span className="menu__footer-text">From Hamburg with love</span>
+          <div className="menu__footer-left">
+            <span>©2026 Platoon Aviation</span>
+            <span>From Hamburg with love</span>
           </div>
-
-          {/* Column 2 (CENTER): Phone & Email */}
-          <div className="menu__footer-col menu__footer-col--center">
-            <a
-              href="tel:+4940285330247"
-              className="menu__footer-link"
-              aria-label="Call Platoon Aviation at +49 40 285 330-247"
-            >
-              +49 40 285 330-247
-            </a>
-            <a
-              href="mailto:hello@flyplatoon.com"
-              className="menu__footer-link"
-              aria-label="Email Platoon Aviation at hello@flyplatoon.com"
-            >
-              hello@flyplatoon.com
-            </a>
+          <div className="menu__footer-center">
+            <a href="tel:+4940285330247" aria-label="Call Platoon Aviation at +49 40 285 330-247">+49 40 285 330-247</a>
+            <a href="mailto:hello@flyplatoon.com" aria-label="Email Platoon Aviation at hello@flyplatoon.com">hello@flyplatoon.com</a>
           </div>
-
-          {/* Column 3 (RIGHT): Social links & Legal pages in a single vertical column */}
-          <div className="menu__footer-col menu__footer-col--right">
-            <a
-              href="https://www.linkedin.com/company/platoon-aviation"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="menu__footer-link"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://www.instagram.com/flyplatoon/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="menu__footer-link"
-            >
-              Instagram
-            </a>
-            <NavLink
-              exact
-              to={{ pathname: ROUTES.Imprint, state: "skipTimeout" }}
-              className="menu__footer-link"
-              activeClassName="active"
-              onClick={handleLinkClick}
-            >
-              Imprint
-            </NavLink>
-            <NavLink
-              exact
-              to={{ pathname: ROUTES.PrivacyPolicy, state: "skipTimeout" }}
-              className="menu__footer-link"
-              activeClassName="active"
-              onClick={handleLinkClick}
-            >
-              Privacy Policy
-            </NavLink>
+          <div className="menu__footer-right">
+            <a href="https://www.linkedin.com/company/platoon-aviation" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/flyplatoon/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <NavLink exact to={{ pathname: ROUTES.Imprint, state: "skipTimeout" }} onClick={handleCardClick}>Imprint</NavLink>
+            <NavLink exact to={{ pathname: ROUTES.PrivacyPolicy, state: "skipTimeout" }} onClick={handleCardClick}>Privacy Policy</NavLink>
           </div>
         </div>
       </footer>
