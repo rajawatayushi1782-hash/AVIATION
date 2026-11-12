@@ -5,7 +5,7 @@ import * as utils from "shell/app/app.utils";
 import React from "react";
 import classNames from "classnames";
 import FooterLegalItem from "./footerLegalItem";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { ROUTES } from "constants/routes";
 
 interface footerProps {
@@ -14,8 +14,12 @@ interface footerProps {
 }
 
 const Footer: React.FC<footerProps> = (props) => {
+  const location = useLocation();
+  const isHome = location.pathname === "/" || location.pathname === "";
+  const showChapters = props.withChapters !== undefined ? props.withChapters : isHome;
+
   const renderChapters = () => {
-    if (props.withChapters) {
+    if (showChapters) {
       return (
         <div className="footer-chapter">
           <div className="footer-chapter__row">
@@ -28,7 +32,9 @@ const Footer: React.FC<footerProps> = (props) => {
                   className="footer-chapter-item"
                   key={key}
                 >
-                  <img src={utils.assetPath(item.image)} alt="" />
+                  <div className="footer-chapter-item__image-wrap">
+                    <img src={utils.assetPath(item.image)} alt={item.label} loading="lazy" />
+                  </div>
                   <div className="footer-chapter-header-title">
                     {item.label}
                   </div>
@@ -45,8 +51,8 @@ const Footer: React.FC<footerProps> = (props) => {
   return (
     <footer
       className={classNames("footer", {
-        "with-chapters": props.withChapters,
-        "without-chapters": !props.withChapters,
+        "with-chapters": showChapters,
+        "without-chapters": !showChapters,
         "with-background": props.withBackground,
       })}
     >
